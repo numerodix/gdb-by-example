@@ -1,5 +1,4 @@
 #include <signal.h>
-#include <stdlib.h>
 
 #define segfault raise(SIGSEGV);
 
