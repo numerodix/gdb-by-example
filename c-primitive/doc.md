@@ -56,6 +56,17 @@ $16 = 72
 $17 = {72, 97, 110, 115, 0}
 ```
 
+Using the `x` command:
+
+```
+(gdb) x/c &initial
+0x7fffffffe07f: 72 'H'
+(gdb) x &first
+0x7fffffffe09c: "Hans"
+(gdb) x/s &first
+0x7fffffffe09c: "Hans"
+```
+
 ### Displaying pointers to chars
 
 ```
