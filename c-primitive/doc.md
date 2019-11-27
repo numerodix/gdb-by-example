@@ -1,4 +1,6 @@
-## Code
+## Characters and strings
+
+### Code
 
 ```
 char initial = 'H';
@@ -10,7 +12,7 @@ char *pfirst = &first[0];
 char *plast = &last[0];
 ```
 
-## Type and size
+### Type and size
 
 gdb knows the size and type of the character variables:
 
@@ -32,7 +34,7 @@ type = char *
 type = char *
 ```
 
-## Displaying character variables
+### Displaying character variables
 
 As chars/strings - this is gdb's default formatting:
 
@@ -54,7 +56,7 @@ $16 = 72
 $17 = {72, 97, 110, 115, 0}
 ```
 
-## Displaying pointers to chars
+### Displaying pointers to chars
 
 ```
 (gdb) p pinitial        # not very useful
@@ -67,20 +69,25 @@ $57 = 72 'H'
 0x7fffffffe07f: 72 'H'
 ```
 
-## Display pointers to strings
-
-There are a few ways to do this.
+### Display pointers to strings
 
 With the default formatter gdb displays the pointer value and (optimistically?) dereferences it and displays the bytes as a null terminated string.
 
 ```
 (gdb) p pfirst   
 $63 = 0x7fffffffe09c "Hans"
-(gdb) x/s pfirst                # same end result
-0x7fffffffe09c: "Hans"
 ```
 
-Trying to deference the pointer explicitly confuses gdb:
+With the `x` command:
+
+```
+(gdb) x/s pfirst                # same end result
+0x7fffffffe09c: "Hans"
+(gdb) x/5c pfirst               # show me 5 chars
+0x7fffffffe09c: 72 'H'  97 'a'  110 'n' 115 's' 0 '\000'
+```
+
+Trying to deference the pointer confuses gdb:
 
 ```
 (gdb) p *pfirst 
