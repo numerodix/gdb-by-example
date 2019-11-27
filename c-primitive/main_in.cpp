@@ -5,7 +5,7 @@
 
 
 int main(int argc, char **argv) {
-// {{<chars.snippet>}}
+// {{<snippets/chars>}}
 
     segfault
 }

@@ -3,7 +3,7 @@
 ### Code
 
 ```
-{{<chars.snippet>}}
+{{<snippets/chars>}}
 ```
 
 ### Type and size

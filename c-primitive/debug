@@ -1,9 +1,0 @@
-#!/bin/bash
-
-set -e
-
-ulimit -c unlimited
-make
-gdb \
-    --command=gdb.script \
-    ./main
