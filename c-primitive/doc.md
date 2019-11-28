@@ -70,7 +70,6 @@
     unsigned short *ptown = &town;
     unsigned short towns[] = {61000, 33109, 41001};
     unsigned short *ptowns = &towns[0];
-
 ```
 
 | Format                | Command      | Output             |

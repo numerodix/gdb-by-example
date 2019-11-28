@@ -24,6 +24,5 @@ int main(int argc, char **argv) {
     unsigned short towns[] = {61000, 33109, 41001};
     unsigned short *ptowns = &towns[0];
 
-
     segfault
 }
