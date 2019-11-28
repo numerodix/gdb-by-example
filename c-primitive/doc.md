@@ -9,6 +9,8 @@
 ### unsigned char
 
 - Size: 1 byte / 8 bits
+- Min: 0
+- Max: 255
 
 ```
     // village population: 243
@@ -69,6 +71,8 @@
 ### unsigned short
 
 - Size: 2 bytes / 16 bits
+- Min: 0
+- Max: 65535
 
 ```
     // town population: 61,000
