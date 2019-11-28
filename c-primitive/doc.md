@@ -1,3 +1,29 @@
+# C primitive types
+
+
+
+## Integers
+
+### Code
+
+```
+    unsigned char village = 240;
+    unsigned short town = 63 * 1000;
+    unsigned int city = 12 * 1000 * 1000;
+    unsigned long long universe = 5LL << 60;
+```
+
+### unsigned char
+
+| Format           | Command         | Output          |
+|------------------|-----------------|-----------------|
+| show type        | `ptype village` | `unsigned char` |
+| display default  | `p village`     | `240 '\360'`    |
+| display unsigned | `p/u village`   | `240`           |
+| display signed   | `p/d village`   | `-16`           |
+
+
+
 ## Characters and strings
 
 ### Code

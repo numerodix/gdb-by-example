@@ -1,8 +1,24 @@
-## Ints
+# C primitive types
 
-| Format  | Command  | Output |
-|---------|----------|--------|
-| default | `p year` | `1984` |
+
+
+## Integers
+
+### Code
+
+```
+{{<snippets/ints>}}
+```
+
+### unsigned char
+
+| Format           | Command         | Output          |
+|------------------+-----------------+-----------------|
+| show type        | `ptype village` | `unsigned char` |
+| display default  | `p village`     | `240 '\360'`    |
+| display unsigned | `p/u village`   | `240`           |
+| display signed   | `p/d village`   | `-16`           |
+
 
 
 ## Characters and strings

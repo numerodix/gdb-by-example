@@ -7,11 +7,13 @@ import sys
 # {{<chars.snippet>}}
 # // {{<chars.snippet>}}
 rx_include = re.compile('([/]{2}[ \t]*)*[{][{][<](?P<filepath>.*?)[>][}][}]')
+rx_table_delim = re.compile('[-][+][-]')
 
 def process(infile):
     outfile = infile.replace('_in', '')
+    outfile = outfile.replace('.org', '.md')
 
-    print("Reading from: %s" % infile)
+    print(" < Reading from: %s" % infile)
     with open(infile) as f:
         content = f.read()
 
@@ -19,7 +21,7 @@ def process(infile):
     while match:
         filepath = match.group('filepath')
 
-        print("Including file: %s" % filepath)
+        print("  - Including file: %s" % filepath)
         with open(filepath) as f:
             included_content = f.read()
 
@@ -27,7 +29,9 @@ def process(infile):
 
         match = rx_include.search(content)
 
-    print("Writing to: %s" % outfile)
+    content = rx_table_delim.sub('-|-', content)
+
+    print(" > Writing to: %s" % outfile)
     with open(outfile, 'w') as f:
         f.write(content)
 
