@@ -1,5 +1,7 @@
 # gdb by example
 
+Why gdb by example, doesn't gdb just know how to display things in the way we want? The answer is no, we have to tell it.
+
 ## C
 
 * Numbers
