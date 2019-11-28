@@ -209,36 +209,36 @@
 | Format                          | Command           | Output                       |
 |---------------------------------+-------------------+------------------------------|
 | show type                       | `ptype puniverse` | `unsigned long long *`       |
-| print as default                | `p puniverse`     | `0x7fffffffdfb4`             |
-| **print deref as default**      | `p *puniverse`    | `4043309055`                 |
-| **print deref as unsigned**     | `p/u *puniverse`  | `4043309055`                 |
-| print deref as signed           | `p/d *puniverse`  | `-251658241`                 |
-| examine as default              | `x puniverse`     | `0x7fffffffdfb4: -251658241` |
-| **examine as single long long** | `x/1uw puniverse` | `4043309055`                 |
+| print as default                | `p puniverse`     | `0x7fffffffdf88`             |
+| **print deref as default**      | `p *puniverse`    | `10376293541461622784`       |
+| **print deref as unsigned**     | `p/u *puniverse`  | `10376293541461622784`       |
+| print deref as signed           | `p/d *puniverse`  | `-8070450532247928832`       |
+| examine as default              | `x puniverse`     | `0x7fffffffdf88: 10376...`
+| **examine as single long long** | `x/1ug puniverse` | `10376293541461622784`       |
 
 #### unsigned long long[]
 
-| Format                     | Command           | Output                          |
-|----------------------------+-------------------+---------------------------------|
-| show type                  | `ptype universes` | `unsigned long long [3]`        |
-| **print as default**       | `p universes`     | `{4043309055, 2021654527, ...}` |
-| **print as unsigned**      | `p/u universes`   | `{4043309055, 2021654527, ...}` |
-| print as signed            | `p/d universes`   | `{-251658241, 2021654527, ...}` |
-| examine as default         | `x universes`     | `0x7fffffffe00c: -251658241`    |
-| **examine as three chars** | `x/3uw universes` | `4043309055   2021654527  ...`  |
-| examine ... in binary      | `x/3tw universes` | `11110000111... ...`            |
-| examine ... in hex         | `x/3xw universes` | `0xf0ffffff   0x787fffff  ...`  |
+| Format                     | Command           | Output                         |
+|----------------------------+-------------------+--------------------------------|
+| show type                  | `ptype universes` | `unsigned long long [3]`       |
+| **print as default**       | `p universes`     | `{10376293541461622784, ...}`  |
+| **print as unsigned**      | `p/u universes`   | `{10376293541461622784, ...}`  |
+| print as signed            | `p/d universes`   | `{-8070450532247928832, ...}`  |
+| examine as default         | `x universes`     | `0x7fffffffe000: 1037629...`   |
+| **examine as three chars** | `x/3ug universes` | `10376293541461622784 ... ...` |
+| examine ... in binary      | `x/3tg universes` | `100100000000... ...`          |
+| examine ... in hex         | `x/3xg universes` | `0x9000000000000000 ...`       |
 
 #### unsigned long long* (to an array)
 
-| Format                     | Command            | Output                          |
-|----------------------------+--------------------+---------------------------------|
-| show type                  | `ptype puniverses` | `unsigned long long *`          |
-| print as default           | `p puniverses`     | `0x7fffffffe00c`                |
-| print deref as unsigned    | `p/u *puniverses`  | `4043309055`                    |
-| print deref as signed      | `p/d *puniverses`  | `-251658241`                    |
-| examine as default         | `x puniverses`     | `4043309055`                    |
-| **examine as three chars** | `x/3uw puniverses` | `4043309055   2021654527   ...` |
+| Format                     | Command            | Output                     |
+|----------------------------+--------------------+----------------------------|
+| show type                  | `ptype puniverses` | `unsigned long long *`     |
+| print as default           | `p puniverses`     | `0x7fffffffe000`           |
+| print deref as unsigned    | `p/u *puniverses`  | `10376293541461622784`     |
+| print deref as signed      | `p/d *puniverses`  | `-8070450532247928832`     |
+| examine as default         | `x puniverses`     | `10376293541461622784`     |
+| **examine as three chars** | `x/3ug puniverses` | `10376293541461622784 ...` |
 
 
 
