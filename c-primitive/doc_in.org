@@ -100,27 +100,27 @@
 
 #### unsigned short[]
 
-| Format                     | Command       | Output                    |
-|----------------------------+---------------+---------------------------|
-| show type                  | `ptype towns` | `unsigned short [3]`      |
-| **print as default**       | `p towns`     | `{61000, 33109, 41001}`   |
-| **print as unsigned**      | `p/u towns`   | `{61000, 33109, 41001}`   |
-| print as signed            | `p/d towns`   | `{-4536, -32427, -24535}` |
-| examine as default         | `x towns`     | `0x7fffffffe012: -4536`   |
-| **examine as three chars** | `x/3uh towns` | `61000   33109   41001`   |
-| examine ... in binary      | `x/3th towns` | `1110111001001000 ...`    |
-| examine ... in hex         | `x/3xh towns` | `0xee48  0x8155  0xa029`  |
+| Format                      | Command       | Output                    |
+|-----------------------------+---------------+---------------------------|
+| show type                   | `ptype towns` | `unsigned short [3]`      |
+| **print as default**        | `p towns`     | `{61000, 33109, 41001}`   |
+| **print as unsigned**       | `p/u towns`   | `{61000, 33109, 41001}`   |
+| print as signed             | `p/d towns`   | `{-4536, -32427, -24535}` |
+| examine as default          | `x towns`     | `0x7fffffffe012: -4536`   |
+| **examine as three shorts** | `x/3uh towns` | `61000   33109   41001`   |
+| examine ... in binary       | `x/3th towns` | `1110111001001000 ...`    |
+| examine ... in hex          | `x/3xh towns` | `0xee48  0x8155  0xa029`  |
 
 #### unsigned short* (to an array)
 
-| Format                     | Command        | Output                  |
-|----------------------------+----------------+-------------------------|
-| show type                  | `ptype ptowns` | `unsigned char *`       |
-| print as default           | `p ptowns`     | `0x7fffffffe012`        |
-| print deref as unsigned    | `p/u *ptowns`  | `61000`                 |
-| print deref as signed      | `p/d *ptowns`  | `-4536`                 |
-| examine as default         | `x ptowns`     | `-4536`                 |
-| **examine as three chars** | `x/3uh ptowns` | `61000   33109   41001` |
+| Format                      | Command        | Output                  |
+|-----------------------------+----------------+-------------------------|
+| show type                   | `ptype ptowns` | `unsigned char *`       |
+| print as default            | `p ptowns`     | `0x7fffffffe012`        |
+| print deref as unsigned     | `p/u *ptowns`  | `61000`                 |
+| print deref as signed       | `p/d *ptowns`  | `-4536`                 |
+| examine as default          | `x ptowns`     | `-4536`                 |
+| **examine as three shorts** | `x/3uh ptowns` | `61000   33109   41001` |
 
 
 
@@ -159,27 +159,27 @@
 
 #### unsigned int[]
 
-| Format                     | Command         | Output                          |
-|----------------------------+-----------------+---------------------------------|
-| show type                  | `ptype planets` | `unsigned int [3]`              |
-| **print as default**       | `p planets`     | `{4043309055, 2021654527, ...}` |
-| **print as unsigned**      | `p/u planets`   | `{4043309055, 2021654527, ...}` |
-| print as signed            | `p/d planets`   | `{-251658241, 2021654527, ...}` |
-| examine as default         | `x planets`     | `0x7fffffffe00c: -251658241`    |
-| **examine as three chars** | `x/3uw planets` | `4043309055   2021654527  ...`  |
-| examine ... in binary      | `x/3tw planets` | `11110000111... ...`            |
-| examine ... in hex         | `x/3xw planets` | `0xf0ffffff   0x787fffff  ...`  |
+| Format                    | Command         | Output                          |
+|---------------------------+-----------------+---------------------------------|
+| show type                 | `ptype planets` | `unsigned int [3]`              |
+| **print as default**      | `p planets`     | `{4043309055, 2021654527, ...}` |
+| **print as unsigned**     | `p/u planets`   | `{4043309055, 2021654527, ...}` |
+| print as signed           | `p/d planets`   | `{-251658241, 2021654527, ...}` |
+| examine as default        | `x planets`     | `0x7fffffffe00c: -251658241`    |
+| **examine as three ints** | `x/3uw planets` | `4043309055   2021654527  ...`  |
+| examine ... in binary     | `x/3tw planets` | `11110000111... ...`            |
+| examine ... in hex        | `x/3xw planets` | `0xf0ffffff   0x787fffff  ...`  |
 
 #### unsigned int* (to an array)
 
-| Format                     | Command          | Output                          |
-|----------------------------+------------------+---------------------------------|
-| show type                  | `ptype pplanets` | `unsigned int *`                |
-| print as default           | `p pplanets`     | `0x7fffffffe00c`                |
-| print deref as unsigned    | `p/u *pplanets`  | `4043309055`                    |
-| print deref as signed      | `p/d *pplanets`  | `-251658241`                    |
-| examine as default         | `x pplanets`     | `4043309055`                    |
-| **examine as three chars** | `x/3uw pplanets` | `4043309055   2021654527   ...` |
+| Format                    | Command          | Output                          |
+|---------------------------+------------------+---------------------------------|
+| show type                 | `ptype pplanets` | `unsigned int *`                |
+| print as default          | `p pplanets`     | `0x7fffffffe00c`                |
+| print deref as unsigned   | `p/u *pplanets`  | `4043309055`                    |
+| print deref as signed     | `p/d *pplanets`  | `-251658241`                    |
+| examine as default        | `x pplanets`     | `4043309055`                    |
+| **examine as three ints** | `x/3uw pplanets` | `4043309055   2021654527   ...` |
 
 
 
@@ -218,27 +218,27 @@
 
 #### unsigned long long[]
 
-| Format                     | Command           | Output                         |
-|----------------------------+-------------------+--------------------------------|
-| show type                  | `ptype universes` | `unsigned long long [3]`       |
-| **print as default**       | `p universes`     | `{10376293541461622784, ...}`  |
-| **print as unsigned**      | `p/u universes`   | `{10376293541461622784, ...}`  |
-| print as signed            | `p/d universes`   | `{-8070450532247928832, ...}`  |
-| examine as default         | `x universes`     | `0x7fffffffe000: 1037629...`   |
-| **examine as three chars** | `x/3ug universes` | `10376293541461622784 ... ...` |
-| examine ... in binary      | `x/3tg universes` | `100100000000... ...`          |
-| examine ... in hex         | `x/3xg universes` | `0x9000000000000000 ...`       |
+| Format                          | Command           | Output                         |
+|---------------------------------+-------------------+--------------------------------|
+| show type                       | `ptype universes` | `unsigned long long [3]`       |
+| **print as default**            | `p universes`     | `{10376293541461622784, ...}`  |
+| **print as unsigned**           | `p/u universes`   | `{10376293541461622784, ...}`  |
+| print as signed                 | `p/d universes`   | `{-8070450532247928832, ...}`  |
+| examine as default              | `x universes`     | `0x7fffffffe000: 1037629...`   |
+| **examine as three long longs** | `x/3ug universes` | `10376293541461622784 ... ...` |
+| examine ... in binary           | `x/3tg universes` | `100100000000... ...`          |
+| examine ... in hex              | `x/3xg universes` | `0x9000000000000000 ...`       |
 
 #### unsigned long long* (to an array)
 
-| Format                     | Command            | Output                     |
-|----------------------------+--------------------+----------------------------|
-| show type                  | `ptype puniverses` | `unsigned long long *`     |
-| print as default           | `p puniverses`     | `0x7fffffffe000`           |
-| print deref as unsigned    | `p/u *puniverses`  | `10376293541461622784`     |
-| print deref as signed      | `p/d *puniverses`  | `-8070450532247928832`     |
-| examine as default         | `x puniverses`     | `10376293541461622784`     |
-| **examine as three chars** | `x/3ug puniverses` | `10376293541461622784 ...` |
+| Format                          | Command            | Output                     |
+|---------------------------------+--------------------+----------------------------|
+| show type                       | `ptype puniverses` | `unsigned long long *`     |
+| print as default                | `p puniverses`     | `0x7fffffffe000`           |
+| print deref as unsigned         | `p/u *puniverses`  | `10376293541461622784`     |
+| print deref as signed           | `p/d *puniverses`  | `-8070450532247928832`     |
+| examine as default              | `x puniverses`     | `10376293541461622784`     |
+| **examine as three long longs** | `x/3ug puniverses` | `10376293541461622784 ...` |
 
 
 
