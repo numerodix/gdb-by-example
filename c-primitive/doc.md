@@ -6,7 +6,7 @@
 
 
 
-### unsigned char
+### unsigned char (1 byte / 8 bits)
 
 ```
     // village population: 243
@@ -64,7 +64,7 @@
 | **examine as three chars** | `x/3ub pvillages` | `243     113     54`         |
 
 
-### unsigned short
+### unsigned short (2 byte / 16 bits)
 
 ```
     // town population: 61,000

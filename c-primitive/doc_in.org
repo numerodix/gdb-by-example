@@ -6,7 +6,7 @@
 
 
 
-### unsigned char
+### unsigned char (1 byte / 8 bits)
 
 ```
 {{<snippets/unsigned-char>}}
@@ -60,7 +60,7 @@
 | **examine as three chars** | `x/3ub pvillages` | `243     113     54`         |
 
 
-### unsigned short
+### unsigned short (2 byte / 16 bits)
 
 ```
 {{<snippets/unsigned-short>}}
