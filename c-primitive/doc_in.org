@@ -64,11 +64,12 @@
 | **examine as three chars** | `x/3ub pvillages` | `243     113     54`         |
 
 
+
 ### unsigned short
 
 - Size: 2 bytes / 16 bits
 - Min: 0
-- Max: 65535
+- Max: 65,535
 
 ```
 {{<snippets/unsigned-short>}}
@@ -120,6 +121,20 @@
 | print deref as signed      | `p/d *ptowns`  | `-4536`                 |
 | examine as default         | `x ptowns`     | `-4536`                 |
 | **examine as three chars** | `x/3ub ptowns` | `61000   33109   41001` |
+
+
+
+### unsigned int
+
+- Size: 4 bytes / 32 bits
+- Min: 0
+- Max: 4,294,967,295
+
+```
+{{<snippets/unsigned-int>}}
+```
+
+#### unsigned int
 
 
 
