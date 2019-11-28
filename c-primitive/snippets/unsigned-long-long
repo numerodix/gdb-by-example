@@ -1,0 +1,5 @@
+    // universe population: 10,376,293,541,461,622,784
+    unsigned long long universe = 10376293541461622784LLU;
+    unsigned long long *puniverse = &universe;
+    unsigned long long universes[] = {universe, universe / 2, universe / 6};
+    unsigned long long *puniverses = &universes[0];
