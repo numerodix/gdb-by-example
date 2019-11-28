@@ -2,4 +2,5 @@
 
 ## C
 
-* [Primitive types](c-primitive/doc.md)
+* Primitive types
+  * [Unsigned integers](c-primitive/doc.md#unsigned-integers)
