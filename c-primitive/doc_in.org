@@ -183,6 +183,65 @@
 
 
 
+### unsigned long long
+
+- Size: 8 bytes / 64 bits
+- Min: 0
+- Max: 18,446,744,073,709,551,615
+
+```
+{{<snippets/unsigned-long-long>}}
+```
+
+#### unsigned long long
+
+| Format                | Command          | Output                   |
+|-----------------------+------------------+--------------------------|
+| show type             | `ptype universe` | `unsigned long long`     |
+| **print as default**  | `p universe`     | `10376293541461622784`   |
+| **print as unsigned** | `p/u universe`   | `10376293541461622784`   |
+| print as signed       | `p/d universe`   | `-8070450532247928832`   |
+| display as binary     | `p/t universe`   | `1001000000000000000...` |
+| display as hex        | `p/x universe`   | `0x9000000000000000`     |
+
+#### unsigned long long* (to a single long long)
+
+| Format                          | Command           | Output                       |
+|---------------------------------+-------------------+------------------------------|
+| show type                       | `ptype puniverse` | `unsigned long long *`       |
+| print as default                | `p puniverse`     | `0x7fffffffdfb4`             |
+| **print deref as default**      | `p *puniverse`    | `4043309055`                 |
+| **print deref as unsigned**     | `p/u *puniverse`  | `4043309055`                 |
+| print deref as signed           | `p/d *puniverse`  | `-251658241`                 |
+| examine as default              | `x puniverse`     | `0x7fffffffdfb4: -251658241` |
+| **examine as single long long** | `x/1uw puniverse` | `4043309055`                 |
+
+#### unsigned long long[]
+
+| Format                     | Command           | Output                          |
+|----------------------------+-------------------+---------------------------------|
+| show type                  | `ptype universes` | `unsigned long long [3]`        |
+| **print as default**       | `p universes`     | `{4043309055, 2021654527, ...}` |
+| **print as unsigned**      | `p/u universes`   | `{4043309055, 2021654527, ...}` |
+| print as signed            | `p/d universes`   | `{-251658241, 2021654527, ...}` |
+| examine as default         | `x universes`     | `0x7fffffffe00c: -251658241`    |
+| **examine as three chars** | `x/3uw universes` | `4043309055   2021654527  ...`  |
+| examine ... in binary      | `x/3tw universes` | `11110000111... ...`            |
+| examine ... in hex         | `x/3xw universes` | `0xf0ffffff   0x787fffff  ...`  |
+
+#### unsigned long long* (to an array)
+
+| Format                     | Command            | Output                          |
+|----------------------------+--------------------+---------------------------------|
+| show type                  | `ptype puniverses` | `unsigned long long *`          |
+| print as default           | `p puniverses`     | `0x7fffffffe00c`                |
+| print deref as unsigned    | `p/u *puniverses`  | `4043309055`                    |
+| print deref as signed      | `p/d *puniverses`  | `-251658241`                    |
+| examine as default         | `x puniverses`     | `4043309055`                    |
+| **examine as three chars** | `x/3uw puniverses` | `4043309055   2021654527   ...` |
+
+
+
 ## Characters and strings
 
 ### Code

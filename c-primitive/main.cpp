@@ -30,5 +30,11 @@ int main(int argc, char **argv) {
     unsigned int planets[] = {planet, planet / 2, planet / 6};
     unsigned int *pplanets = &planets[0];
 
+    // universe population: 10,376,293,541,461,622,784
+    unsigned long long universe = 10376293541461622784LLU;
+    unsigned long long *puniverse = &universe;
+    unsigned long long universes[] = {universe, universe / 2, universe / 6};
+    unsigned long long *puniverses = &universes[0];
+
     segfault
 }
