@@ -4,30 +4,24 @@
 
 ## Integers
 
-### Code
+### unsigned char
 
 ```
-    // village population 243
+    // village population: 243
     unsigned char village = 243;
     unsigned char *pvillage = &village;
     unsigned char villages[] = {243, 113, 54};
     unsigned char *pvillages = &villages[0];
-
-    unsigned short town = 63 * 1000;
-    unsigned int city = 12 * 1000 * 1000;
-    unsigned long long universe = 5LL << 60;
 ```
-
-### unsigned char
 
 | Format            | Command         | Output          |
 |-------------------|-----------------|-----------------|
 | show type         | `ptype village` | `unsigned char` |
-| display default   | `p village`     | `240 '\360'`    |
-| display unsigned  | `p/u village`   | `240`           |
-| display signed    | `p/d village`   | `-16`           |
-| display as binary | `p/t village`   | `11110000`      |
-| display as hex    | `p/x village`   | `0xf0`          |
+| display default   | `p village`     | `243 '\363'`    |
+| display unsigned  | `p/u village`   | `243`           |
+| display signed    | `p/d village`   | `-13`           |
+| display as binary | `p/t village`   | `11110011`      |
+| display as hex    | `p/x village`   | `0xf3`          |
 
 
 

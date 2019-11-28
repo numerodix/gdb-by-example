@@ -1,0 +1,5 @@
+    // village population: 243
+    unsigned char village = 243;
+    unsigned char *pvillage = &village;
+    unsigned char villages[] = {243, 113, 54};
+    unsigned char *pvillages = &villages[0];

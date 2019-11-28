@@ -4,22 +4,20 @@
 
 ## Integers
 
-### Code
-
-```
-{{<snippets/ints>}}
-```
-
 ### unsigned char
+
+```
+{{<snippets/unsigned-char>}}
+```
 
 | Format            | Command         | Output          |
 |-------------------+-----------------+-----------------|
 | show type         | `ptype village` | `unsigned char` |
-| display default   | `p village`     | `240 '\360'`    |
-| display unsigned  | `p/u village`   | `240`           |
-| display signed    | `p/d village`   | `-16`           |
-| display as binary | `p/t village`   | `11110000`      |
-| display as hex    | `p/x village`   | `0xf0`          |
+| display default   | `p village`     | `243 '\363'`    |
+| display unsigned  | `p/u village`   | `243`           |
+| display signed    | `p/d village`   | `-13`           |
+| display as binary | `p/t village`   | `11110011`      |
+| display as hex    | `p/x village`   | `0xf3`          |
 
 
 
