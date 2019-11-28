@@ -180,7 +180,7 @@
 | examine as default         | `x planets`     | `0x7fffffffe00c: -251658241`    |
 | **examine as three chars** | `x/3uw planets` | `4043309055   2021654527  ...`  |
 | examine ... in binary      | `x/3tw planets` | `11110000111... ...`            |
-| examine ... in hex         | `x/3xw planets` | `0xf0ffffff   0x787fffff  ...   |
+| examine ... in hex         | `x/3xw planets` | `0xf0ffffff   0x787fffff  ...`  |
 
 #### unsigned int* (to an array)
 
