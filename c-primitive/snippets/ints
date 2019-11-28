@@ -1,7 +1,7 @@
     // village population 243
     unsigned char village = 243;
-    unsigned char *village = &village;
-    unsigned char villages[] = {village, village / 2, village / 5};
+    unsigned char *pvillage = &village;
+    unsigned char villages[] = {243, 113, 54};
     unsigned char *pvillages = &villages[0];
 
     unsigned short town = 63 * 1000;
