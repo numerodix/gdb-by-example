@@ -18,5 +18,12 @@ int main(int argc, char **argv) {
     unsigned char villages[] = {243, 113, 54};
     unsigned char *pvillages = &villages[0];
 
+    // town population: 61,000
+    unsigned short town = 61000;
+    unsigned short *ptown = &town;
+    unsigned short towns[] = {61000, 33109, 41001};
+    unsigned short *ptowns = &towns[0];
+
+
     segfault
 }

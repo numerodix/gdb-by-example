@@ -8,5 +8,7 @@ int main(int argc, char **argv) {
  
 // {{<snippets/unsigned-char>}}
 
+// {{<snippets/unsigned-short>}}
+
     segfault
 }
