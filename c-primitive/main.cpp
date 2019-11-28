@@ -24,11 +24,11 @@ int main(int argc, char **argv) {
     unsigned short towns[] = {61000, 33109, 41001};
     unsigned short *ptowns = &towns[0];
 
-    // city population: 12,000,000
-    unsigned short city = 12 * 1000 * 1000;
-    unsigned short *pcity = &city;
-    unsigned short cities[] = {city, city / 2, city / 6};
-    unsigned short *pcities = &cities[0];
+    // planet population: 4,043,309,055
+    unsigned int planet = 4043309055;
+    unsigned int *pplanet = &planet;
+    unsigned int planets[] = {planet, planet / 2, planet / 6};
+    unsigned int *pplanets = &planets[0];
 
     segfault
 }

@@ -128,7 +128,7 @@
 | print deref as unsigned    | `p/u *ptowns`  | `61000`                 |
 | print deref as signed      | `p/d *ptowns`  | `-4536`                 |
 | examine as default         | `x ptowns`     | `-4536`                 |
-| **examine as three chars** | `x/3ub ptowns` | `61000   33109   41001` |
+| **examine as three chars** | `x/3uh ptowns` | `61000   33109   41001` |
 
 
 
@@ -139,14 +139,59 @@
 - Max: 4,294,967,295
 
 ```
-    // city population: 12,000,000
-    unsigned short city = 12 * 1000 * 1000;
-    unsigned short *pcity = &city;
-    unsigned short cities[] = {city, city / 2, city / 6};
-    unsigned short *pcities = &cities[0];
+    // planet population: 4,043,309,055
+    unsigned int planet = 4043309055;
+    unsigned int *pplanet = &planet;
+    unsigned int planets[] = {planet, planet / 2, planet / 6};
+    unsigned int *pplanets = &planets[0];
 ```
 
 #### unsigned int
+
+| Format                | Command        | Output           |
+|-----------------------|----------------|------------------|
+| show type             | `ptype planet` | `unsigned int`   |
+| **print as default**  | `p planet`     | `4043309055`     |
+| **print as unsigned** | `p/u planet`   | `4043309055`     |
+| print as signed       | `p/d planet`   | `-251658241`     |
+| display as binary     | `p/t planet`   | `11110000111...` |
+| display as hex        | `p/x planet`   | `0xf0ffffff`     |
+
+#### unsigned int* (to a single int)
+
+| Format                      | Command         | Output                       |
+|-----------------------------|-----------------|------------------------------|
+| show type                   | `ptype pplanet` | `unsigned int *`             |
+| print as default            | `p pplanet`     | `0x7fffffffdfb4`             |
+| **print deref as default**  | `p *pplanet`    | `4043309055`                 |
+| **print deref as unsigned** | `p/u *pplanet`  | `4043309055`                 |
+| print deref as signed       | `p/d *pplanet`  | `-251658241`                 |
+| examine as default          | `x pplanet`     | `0x7fffffffdfb4: -251658241` |
+| **examine as single int**   | `x/1uw pplanet` | `4043309055`                 |
+
+#### unsigned int[]
+
+| Format                     | Command         | Output                          |
+|----------------------------|-----------------|---------------------------------|
+| show type                  | `ptype planets` | `unsigned int [3]`              |
+| **print as default**       | `p planets`     | `{4043309055, 2021654527, ...}` |
+| **print as unsigned**      | `p/u planets`   | `{4043309055, 2021654527, ...}` |
+| print as signed            | `p/d planets`   | `{-251658241, 2021654527, ...}` |
+| examine as default         | `x planets`     | `0x7fffffffe00c: -251658241`    |
+| **examine as three chars** | `x/3uw planets` | `4043309055   2021654527  ...`  |
+| examine ... in binary      | `x/3tw planets` | `11110000111... ...`            |
+| examine ... in hex         | `x/3xw planets` | `0xf0ffffff   0x787fffff  ...   |
+
+#### unsigned int* (to an array)
+
+| Format                     | Command          | Output                          |
+|----------------------------|------------------|---------------------------------|
+| show type                  | `ptype pplanets` | `unsigned int *`                |
+| print as default           | `p pplanets`     | `0x7fffffffe00c`                |
+| print deref as unsigned    | `p/u *pplanets`  | `4043309055`                    |
+| print deref as signed      | `p/d *pplanets`  | `-251658241`                    |
+| examine as default         | `x pplanets`     | `4043309055`                    |
+| **examine as three chars** | `x/3uw pplanets` | `4043309055   2021654527   ...` |
 
 
 
