@@ -29,7 +29,7 @@
 | print as default                | `p pvillage`     | `0x7fffffffdfef "\363\356..."` |
 | print deref as default          | `p *pvillage`    | `243 '\363'`                   |
 | **print deref as unsigned**     | `p/u *pvillage`  | `243`                          |
-| print defef as signed           | `p/d *pvillage`  | `-13`                          |
+| print deref as signed           | `p/d *pvillage`  | `-13`                          |
 | examine as default              | `x pvillage`     | `0x7fffffffdfef: 11110011`     |
 | **examine as single char/byte** | `x/1ub pvillage` | `243`                          |
 
@@ -81,34 +81,33 @@
 | print as default            | `p ptown`     | `0x7fffffffdfd6`             |
 | **print deref as default**  | `p *ptown`    | `61000`                      |
 | **print deref as unsigned** | `p/u *ptown`  | `61000`                      |
-| print defef as signed       | `p/d *ptown`  | `-4536`                      |
+| print deref as signed       | `p/d *ptown`  | `-4536`                      |
 | examine as default          | `x ptown`     | `0x7fffffffdfd6: -539693496` |
 | **examine as single short** | `x/1uh ptown` | `61000`                      |
-|                             |               |                              |
 
 ### unsigned short[]
 
-| Format                     | Command       | Output                         |
-|----------------------------+---------------+--------------------------------|
-| show type                  | `ptype towns` | `unsigned char [3]`            |
-| print as default           | `p towns`     | `"\363q6"`                     |
-| **print as unsigned**      | `p/u towns`   | `{243, 113, 54}`               |
-| print as signed            | `p/d towns`   | `{-13, 113, 54}`               |
-| examine as default         | `x towns`     | `0x7fffffffe019: 11110011`     |
-| **examine as three chars** | `x/3ub towns` | `243     113     54`           |
-| examine ... in binary      | `x/3tb towns` | `11110011  01110001  00110110` |
-| examine ... in hex         | `x/3xb towns` | `0xf3  0x71  0x36`             |
+| Format                     | Command       | Output                    |
+|----------------------------+---------------+---------------------------|
+| show type                  | `ptype towns` | `unsigned short [3]`      |
+| **print as default**       | `p towns`     | `{61000, 33109, 41001}`   |
+| **print as unsigned**      | `p/u towns`   | `{61000, 33109, 41001}`   |
+| print as signed            | `p/d towns`   | `{-4536, -32427, -24535}` |
+| examine as default         | `x towns`     | `0x7fffffffe012: -4536`   |
+| **examine as three chars** | `x/3uh towns` | `61000   33109   41001`   |
+| examine ... in binary      | `x/3th towns` | `1110111001001000 ...`    |
+| examine ... in hex         | `x/3xh towns` | `0xee48  0x8155  0xa029`  |
 
 ### unsigned short* (to an array)
 
-| Format                     | Command        | Output                       |
-|----------------------------+----------------+------------------------------|
-| show type                  | `ptype ptowns` | `unsigned char *`            |
-| print as default           | `p ptowns`     | `0x7fffffffe019 "\363q6..."` |
-| print deref as unsigned    | `p/u *ptowns`  | `243`                        |
-| print deref as signed      | `p/d *ptowns`  | `-13`                        |
-| examine as default         | `x ptowns`     | `0x7fffffffe019: -13`        |
-| **examine as three chars** | `x/3ub ptowns` | `243     113     54`         |
+| Format                     | Command        | Output                  |
+|----------------------------+----------------+-------------------------|
+| show type                  | `ptype ptowns` | `unsigned char *`       |
+| print as default           | `p ptowns`     | `0x7fffffffe012`        |
+| print deref as unsigned    | `p/u *ptowns`  | `61000`                 |
+| print deref as signed      | `p/d *ptowns`  | `-4536`                 |
+| examine as default         | `x ptowns`     | `-4536`                 |
+| **examine as three chars** | `x/3ub ptowns` | `61000   33109   41001` |
 
 
 
