@@ -15,12 +15,14 @@
 
 ### unsigned char
 
-| Format           | Command         | Output          |
-|------------------|-----------------|-----------------|
-| show type        | `ptype village` | `unsigned char` |
-| display default  | `p village`     | `240 '\360'`    |
-| display unsigned | `p/u village`   | `240`           |
-| display signed   | `p/d village`   | `-16`           |
+| Format            | Command         | Output          |
+|-------------------|-----------------|-----------------|
+| show type         | `ptype village` | `unsigned char` |
+| display default   | `p village`     | `240 '\360'`    |
+| display unsigned  | `p/u village`   | `240`           |
+| display signed    | `p/d village`   | `-16`           |
+| display as binary | `p/t village`   | `11110000`      |
+| display as hex    | `p/x village`   | `0xf0`          |
 
 
 
