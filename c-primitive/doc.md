@@ -7,7 +7,12 @@
 ### Code
 
 ```
-    unsigned char village = 240;
+    // village population 243
+    unsigned char village = 243;
+    unsigned char *village = &village;
+    unsigned char villages[] = {village, village / 2, village / 5};
+    unsigned char *pvillages = &villages[0];
+
     unsigned short town = 63 * 1000;
     unsigned int city = 12 * 1000 * 1000;
     unsigned long long universe = 5LL << 60;
