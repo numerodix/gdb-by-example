@@ -19,7 +19,7 @@
 | display as binary     | `p/t village`   | `11110011`      |
 | display as hex        | `p/x village`   | `0xf3`          |
 
-### unsigned char*
+### unsigned char* (to a single char)
 
 | Format                          | Command          | Output                         |
 |---------------------------------+------------------+--------------------------------|
@@ -41,6 +41,17 @@
 | print as signed            | `p/d villages`   | `{-13, 113, 54}`           |
 | examine as default         | `x villages`     | `0x7fffffffe019: 11110011` |
 | **examine as three chars** | `x/3ub villages` | `243     113     54`       |
+
+### unsigned char* (to an array)
+
+| Format                     | Command           | Output                       |
+|----------------------------+-------------------+------------------------------|
+| show type                  | `ptype pvillages` | `unsigned char *`            |
+| print as default           | `p pvillages`     | `0x7fffffffe019 "\363q6..."` |
+| print deref as unsigned    | `p/u *pvillages`  | `243`                        |
+| print deref as signed      | `p/d *pvillages`  | `-13`                        |
+| examine as default         | `x pvillages`     | `0x7fffffffe019: -13`        |
+| **examine as three chars** | `x/3ub villages`  | `243     113     54`         |
 
 
 
