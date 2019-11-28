@@ -2,7 +2,7 @@
 
 
 
-## Integers
+## Unsigned integers
 
 ### unsigned char
 
