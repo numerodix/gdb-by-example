@@ -4,6 +4,8 @@
 
 ## Unsigned integers
 
+
+
 ### unsigned char
 
 ```
@@ -58,6 +60,64 @@
 | print deref as signed      | `p/d *pvillages`  | `-13`                        |
 | examine as default         | `x pvillages`     | `0x7fffffffe019: -13`        |
 | **examine as three chars** | `x/3ub pvillages` | `243     113     54`         |
+
+
+### unsigned short
+
+```
+    // town population: 61,000
+    unsigned short town = 61000;
+    unsigned short *ptown = &town;
+    unsigned short towns[] = {61000, 33109, 41001};
+    unsigned short *ptowns = &towns[0];
+
+```
+
+| Format                | Command      | Output             |
+|-----------------------|--------------|--------------------|
+| show type             | `ptype town` | `unsigned short`   |
+| **print as default**  | `p town`     | `61000`            |
+| **print as unsigned** | `p/u town`   | `61000`            |
+| print as signed       | `p/d town`   | `-4536`            |
+| display as binary     | `p/t town`   | `1110111001001000` |
+| display as hex        | `p/x town`   | `0xee48`           |
+
+### unsigned short* (to a single short)
+
+| Format                      | Command       | Output                       |
+|-----------------------------|---------------|------------------------------|
+| show type                   | `ptype ptown` | `unsigned short *`           |
+| print as default            | `p ptown`     | `0x7fffffffdfd6`             |
+| **print deref as default**  | `p *ptown`    | `61000`                      |
+| **print deref as unsigned** | `p/u *ptown`  | `61000`                      |
+| print defef as signed       | `p/d *ptown`  | `-4536`                      |
+| examine as default          | `x ptown`     | `0x7fffffffdfd6: -539693496` |
+| **examine as single short** | `x/1uh ptown` | `61000`                      |
+|                             |               |                              |
+
+### unsigned short[]
+
+| Format                     | Command       | Output                         |
+|----------------------------|---------------|--------------------------------|
+| show type                  | `ptype towns` | `unsigned char [3]`            |
+| print as default           | `p towns`     | `"\363q6"`                     |
+| **print as unsigned**      | `p/u towns`   | `{243, 113, 54}`               |
+| print as signed            | `p/d towns`   | `{-13, 113, 54}`               |
+| examine as default         | `x towns`     | `0x7fffffffe019: 11110011`     |
+| **examine as three chars** | `x/3ub towns` | `243     113     54`           |
+| examine ... in binary      | `x/3tb towns` | `11110011  01110001  00110110` |
+| examine ... in hex         | `x/3xb towns` | `0xf3  0x71  0x36`             |
+
+### unsigned short* (to an array)
+
+| Format                     | Command        | Output                       |
+|----------------------------|----------------|------------------------------|
+| show type                  | `ptype ptowns` | `unsigned char *`            |
+| print as default           | `p ptowns`     | `0x7fffffffe019 "\363q6..."` |
+| print deref as unsigned    | `p/u *ptowns`  | `243`                        |
+| print deref as signed      | `p/d *ptowns`  | `-13`                        |
+| examine as default         | `x ptowns`     | `0x7fffffffe019: -13`        |
+| **examine as three chars** | `x/3ub ptowns` | `243     113     54`         |
 
 
 
