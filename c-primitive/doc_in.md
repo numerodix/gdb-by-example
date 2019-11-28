@@ -1,3 +1,9 @@
+## Ints
+
+| Format | Command | Output |
+| default | `p year` | `1984` |
+
+
 ## Characters and strings
 
 ### Code
