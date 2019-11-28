@@ -16,6 +16,8 @@
     unsigned char *pvillages = &villages[0];
 ```
 
+#### unsigned char
+
 | Format                | Command         | Output          |
 |-----------------------|-----------------|-----------------|
 | show type             | `ptype village` | `unsigned char` |
@@ -25,7 +27,7 @@
 | display as binary     | `p/t village`   | `11110011`      |
 | display as hex        | `p/x village`   | `0xf3`          |
 
-### unsigned char* (to a single char)
+#### unsigned char* (to a single char)
 
 | Format                          | Command          | Output                         |
 |---------------------------------|------------------|--------------------------------|
@@ -37,7 +39,7 @@
 | examine as default              | `x pvillage`     | `0x7fffffffdfef: 11110011`     |
 | **examine as single char/byte** | `x/1ub pvillage` | `243`                          |
 
-### unsigned char[]
+#### unsigned char[]
 
 | Format                     | Command          | Output                         |
 |----------------------------|------------------|--------------------------------|
@@ -50,7 +52,7 @@
 | examine ... in binary      | `x/3tb villages` | `11110011  01110001  00110110` |
 | examine ... in hex         | `x/3xb villages` | `0xf3  0x71  0x36`             |
 
-### unsigned char* (to an array)
+#### unsigned char* (to an array)
 
 | Format                     | Command           | Output                       |
 |----------------------------|-------------------|------------------------------|
@@ -72,6 +74,8 @@
     unsigned short *ptowns = &towns[0];
 ```
 
+#### unsigned short
+
 | Format                | Command      | Output             |
 |-----------------------|--------------|--------------------|
 | show type             | `ptype town` | `unsigned short`   |
@@ -81,7 +85,7 @@
 | display as binary     | `p/t town`   | `1110111001001000` |
 | display as hex        | `p/x town`   | `0xee48`           |
 
-### unsigned short* (to a single short)
+#### unsigned short* (to a single short)
 
 | Format                      | Command       | Output                       |
 |-----------------------------|---------------|------------------------------|
@@ -93,7 +97,7 @@
 | examine as default          | `x ptown`     | `0x7fffffffdfd6: -539693496` |
 | **examine as single short** | `x/1uh ptown` | `61000`                      |
 
-### unsigned short[]
+#### unsigned short[]
 
 | Format                     | Command       | Output                    |
 |----------------------------|---------------|---------------------------|
@@ -106,7 +110,7 @@
 | examine ... in binary      | `x/3th towns` | `1110111001001000 ...`    |
 | examine ... in hex         | `x/3xh towns` | `0xee48  0x8155  0xa029`  |
 
-### unsigned short* (to an array)
+#### unsigned short* (to an array)
 
 | Format                     | Command        | Output                  |
 |----------------------------|----------------|-------------------------|
