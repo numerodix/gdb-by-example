@@ -1,6 +1,7 @@
 ## Ints
 
-| Format | Command | Output |
+| Format  | Command  | Output |
+|---------|----------|--------|
 | default | `p year` | `1984` |
 
 
