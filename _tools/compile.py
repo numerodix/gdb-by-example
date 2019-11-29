@@ -35,6 +35,8 @@ rx_md_headline = re.compile('^(?P<level>[#]+)[ \t]*(?P<heading>.*)')
 
 rx_table_delim = re.compile('[-][+][-]')
 
+SOURCE_SELF = '.'
+
 def indent_block(num, block):
     lines = block.split('\n')
     if num > 0:
@@ -58,7 +60,7 @@ def build_md_toc(level_zero, spec):
 
 def create_toc(level_from, level_to, source, cur_content):
     content = cur_content
-    if source != '.':
+    if source != SOURCE_SELF:
         with open(source) as f:
             content = f.read()
 
@@ -74,7 +76,7 @@ def create_toc(level_from, level_to, source, cur_content):
 
             if level_from <= level <= level_to:
                 url = '#' + heading.replace(' ', '-').lower()
-                if source != '.':
+                if source != SOURCE_SELF:
                     url = '%s%s' % (source, url)
                 spec.append((level, heading, url))
 
