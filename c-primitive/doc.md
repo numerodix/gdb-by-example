@@ -319,3 +319,26 @@ unsigned long long *puniverses = &universes[0];
 | print deref as signed           | `p/d *puniverses`  | `-8070450532247928832`     |
 | examine as default              | `x puniverses`     | `10376293541461622784`     |
 | **examine as three long longs** | `x/3ug puniverses` | `10376293541461622784 ...` |
+
+```
+// a planet's surface temperature: -121 C
+char surface = -121;
+char *psurface = &surface;
+char surfaces[] = {-121, -97, -56};
+char *psurfaces = &surfaces[0];
+// credit card debt: 31,500 
+short balance = -31500;
+short *pbalance = &balance;
+short balances[] = {-31500, -29130, -15120};
+short *pbalances = &balances[0];
+// VC funded company earnings: -2,120,401,005
+int profit = -2120401005;
+int *pprofit = &profit;
+int profits[] = {profit, profit / 2, profit / 6};
+int *pprofits = &profits[0];
+// future world economy deficit: 8,220,802,194,093,872,013
+unsigned long long deficit = -8220802194093872013LL;
+unsigned long long *pdeficit = &deficit;
+unsigned long long deficits[] = {deficit, deficit / 2, deficit / 6};
+unsigned long long *pdeficits = &deficits[0];
+```

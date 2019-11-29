@@ -6,6 +6,7 @@
 int main(int argc, char **argv) {
 // {{<include:snippets/chars>}}
  
+
 // {{<include:snippets/unsigned-char>}}
 
 // {{<include:snippets/unsigned-short>}}
@@ -13,6 +14,15 @@ int main(int argc, char **argv) {
 // {{<include:snippets/unsigned-int>}}
 
 // {{<include:snippets/unsigned-long-long>}}
+
+
+// {{<include:snippets/signed-char>}}
+
+// {{<include:snippets/signed-short>}}
+
+// {{<include:snippets/signed-int>}}
+
+// {{<include:snippets/signed-long-long>}}
 
     segfault
 }

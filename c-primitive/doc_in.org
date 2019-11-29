@@ -294,3 +294,10 @@
 | print deref as signed           | `p/d *puniverses`  | `-8070450532247928832`     |
 | examine as default              | `x puniverses`     | `10376293541461622784`     |
 | **examine as three long longs** | `x/3ug puniverses` | `10376293541461622784 ...` |
+
+```
+{{<include:snippets/signed-char,indent:-4>}}
+{{<include:snippets/signed-short,indent:-4>}}
+{{<include:snippets/signed-int,indent:-4>}}
+{{<include:snippets/signed-long-long,indent:-4>}}
+```
