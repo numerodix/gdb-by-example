@@ -11,6 +11,8 @@ int main(int argc, char **argv) {
     char *pinitial = &initial;
     char *pfirst = &first[0];
     char *plast = &last[0];
+    char initial = 'H';
+    char *pinitial = &initial;
  
     // village population: 243
     unsigned char village = 243;

@@ -272,6 +272,23 @@
     char *plast = &last[0];
 ```
 
+### char
+
+#### char
+
+```
+    char initial = 'H';
+    char *pinitial = &initial;
+```
+
+| Format           | Command         | Output   |
+|------------------|-----------------|----------|
+| show type        | `ptype initial` | `char`   |
+| print as default | `p initial`     | `72 'H'` |
+| print as number  | `p/d initial`   | `72`     |
+| examine as char  | `x/c pinitial`  | `72 'H'` |
+
+
 ### Type and size
 
 gdb knows the size and type of the character variables:
