@@ -18,7 +18,7 @@
 | show type            | `ptype initial` | `char`   |
 | **print as default** | `p initial`     | `72 'H'` |
 | print as number      | `p/d initial`   | `72`     |
-| examine as char      | `x/c &initial`  | `72 'H'` |
+| **examine as char**  | `x/c &initial`  | `72 'H'` |
 
 #### char* (to a single char)
 
@@ -38,7 +38,7 @@
 | print as number array | `p/d name`   | `{72, 97, 110, 115, 32, ...}` |
 | **examine as string** | `x/s name`   | `"Hans Zimmer"`               |
 
-#### char* (as a string)
+#### char* (to a string)
 
 | Format                         | Command       | Output                                |
 |--------------------------------+---------------+---------------------------------------|
