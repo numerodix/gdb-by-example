@@ -4,17 +4,34 @@ import re
 import sys
 
 
+pat_open = '[{][{][<]'
+pat_close = '[>][}][}]'
+
+pat_include = 'include[:](?P<filepath>.*?)'
 pat_indent = ',indent[:](?P<indent>[0-9-]+)'
-pat_options = '(' + pat_indent + ')*'
+pat_include_options = '(' + pat_indent + ')*'
+
+pat_toc = 'toc'
+pat_levels = ',levels[:](?P<level_from>[0-9]+)[-](?P<level_to>[0-9]+)'
+pat_source = ',source:(?P<source>([.]|.*?))'
+pat_toc_options = '(' + pat_levels + '|' + pat_source + ')*'
 
 # {{<chars.snippet>}}
 # // {{<chars.snippet,indent:-4>}}
 rx_include = re.compile(
-    '([/]{2}[ \t]*)*'
-    '[{][{][<]'
-    '(?P<filepath>.*?)' + pat_options +
-    '[>][}][}]'
+    '([/]{2}[ \t]*)*' +
+    pat_open +
+    pat_include + pat_include_options +
+    pat_close
 )
+
+rx_toc = re.compile(
+    pat_open +
+    pat_toc + pat_toc_options +
+    pat_close
+)
+
+rx_md_headline = re.compile('^(?P<level>[#]+)[ \t]*(?P<heading>.*)')
 
 rx_table_delim = re.compile('[-][+][-]')
 
@@ -27,6 +44,35 @@ def indent_block(num, block):
         rx = re.compile('^[ ]{' + str(num) + '}')
         lines = [rx.sub('', line) for line in lines]
     return '\n'.join(lines)
+
+def build_md_toc(level_zero, spec):
+    lines = []
+
+    indent = '  '
+    for level, title, url in spec:
+        level = level - level_zero
+        line = '%s* [%s](%s)' % (indent * level, title, url)
+        lines.append(line)
+
+    return '\n'.join(lines)
+
+def create_toc(level_from, level_to, source, cur_content):
+    content = cur_content
+    lines = content.split('\n')
+
+    spec = []
+
+    for line in lines:
+        match = rx_md_headline.search(line)
+        if match:
+            level = len(match.group('level'))
+            heading = match.group('heading').strip()
+
+            if level_from <= level <= level_to:
+                url = '#' + heading.replace(' ', '-').lower()
+                spec.append((level, heading, url))
+
+    return build_md_toc(level_from, spec)
 
 def process(infile):
     outfile = infile.replace('_in', '')
@@ -48,10 +94,21 @@ def process(infile):
             included_content = f.read()
 
         included_content = indent_block(indent_chars, included_content)
-
         content = content[:match.start()] + included_content + content[match.end():]
 
         match = rx_include.search(content)
+
+    match = rx_toc.search(content)
+    while match:
+        level_from = int(match.group('level_from'))
+        level_to = int(match.group('level_to'))
+        source = match.group('source')
+
+        print("  - Creating toc from file: %s" % source)
+        toc = create_toc(level_from, level_to, source, content)
+        content = content[:match.start()] + toc + content[match.end():]
+
+        match = rx_toc.search(content)
 
     content = rx_table_delim.sub('-|-', content)
 

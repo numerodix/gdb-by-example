@@ -4,15 +4,15 @@
 
 
 int main(int argc, char **argv) {
-// {{<snippets/chars>}}
+// {{<include:snippets/chars>}}
  
-// {{<snippets/unsigned-char>}}
+// {{<include:snippets/unsigned-char>}}
 
-// {{<snippets/unsigned-short>}}
+// {{<include:snippets/unsigned-short>}}
 
-// {{<snippets/unsigned-int>}}
+// {{<include:snippets/unsigned-int>}}
 
-// {{<snippets/unsigned-long-long>}}
+// {{<include:snippets/unsigned-long-long>}}
 
     segfault
 }

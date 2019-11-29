@@ -1,11 +1,22 @@
 # C primitive types
 
 
+* [Characters and strings](#characters-and-strings)
+  * [char](#char)
+* [Unsigned integers](#unsigned-integers)
+  * [unsigned char](#unsigned-char)
+  * [unsigned short](#unsigned-short)
+  * [unsigned int](#unsigned-int)
+  * [unsigned long long](#unsigned-long-long)
+
 
 ## Characters and strings
 
 
 ### char
+
+- Size: 1 byte / 8 bits
+- Charset: ASCII
 
 ```
 char initial = 'H';

@@ -1,14 +1,19 @@
 # C primitive types
 
 
+{{<toc,levels:2-3,source:.>}}
+
 
 ## Characters and strings
 
 
 ### char
 
+- Size: 1 byte / 8 bits
+- Charset: ASCII
+
 ```
-{{<snippets/chars,indent:-4>}}
+{{<include:snippets/chars,indent:-4>}}
 ```
 
 #### char
@@ -63,7 +68,7 @@
 - Max: 255
 
 ```
-{{<snippets/unsigned-char,indent:-4>}}
+{{<include:snippets/unsigned-char,indent:-4>}}
 ```
 
 #### unsigned char
@@ -122,7 +127,7 @@
 - Max: 65,535
 
 ```
-{{<snippets/unsigned-short,indent:-4>}}
+{{<include:snippets/unsigned-short,indent:-4>}}
 ```
 
 #### unsigned short
@@ -181,7 +186,7 @@
 - Max: 4,294,967,295
 
 ```
-{{<snippets/unsigned-int,indent:-4>}}
+{{<include:snippets/unsigned-int,indent:-4>}}
 ```
 
 #### unsigned int
@@ -240,7 +245,7 @@
 - Max: 18,446,744,073,709,551,615
 
 ```
-{{<snippets/unsigned-long-long,indent:-4>}}
+{{<include:snippets/unsigned-long-long,indent:-4>}}
 ```
 
 #### unsigned long long
