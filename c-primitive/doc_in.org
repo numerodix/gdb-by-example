@@ -8,17 +8,42 @@
 ### char
 
 ```
-{{<snippets/char>}}
+{{<snippets/chars>}}
 ```
 
 #### char
 
-| Format           | Command         | Output   |
-|------------------+-----------------+----------|
-| show type        | `ptype initial` | `char`   |
-| print as default | `p initial`     | `72 'H'` |
-| print as number  | `p/d initial`   | `72`     |
-| examine as char  | `x/c pinitial`  | `72 'H'` |
+| Format               | Command         | Output   |
+|----------------------+-----------------+----------|
+| show type            | `ptype initial` | `char`   |
+| **print as default** | `p initial`     | `72 'H'` |
+| print as number      | `p/d initial`   | `72`     |
+
+#### char* (to a single char)
+
+| Format                     | Command          | Output                     |
+|----------------------------+------------------+----------------------------|
+| show type                  | `ptype pinitial` | `char *`                   |
+| print as default           | `p pinitial`     | `"H\363H\356\377\377\377"` |
+| **print deref as default** | `p *pinitial`    | `72 'H'`                   |
+| **examine as char**        | `x/c pinitial`   | `72 'H'`                   |
+
+#### char[] (as a string)
+
+| Format               | Command      | Output          |
+|----------------------+--------------+-----------------|
+| show type            | `ptype name` | `char [12]`     |
+| **print as default** | `p name`     | `"Hans Zimmer"` |
+| examine as char      | `x/c name`   | `72 'H'`        |
+
+#### char* (as a string)
+
+| Format                      | Command       | Output                                |
+|-----------------------------+---------------+---------------------------------------|
+| show type                   | `ptype pname` | `char *`                              |
+| **print as default**        | `p pname`     | `"Hans Zimmer"`                       |
+| examine as char             | `x/c name`    | `72 'H'`                              |
+| examine as string with size | `x/12c name`  | `72 'H'  97 'a'  110 'n' 115 's' ...` |
 
 
 

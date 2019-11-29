@@ -5,14 +5,9 @@
 
 int main(int argc, char **argv) {
     char initial = 'H';
-    char first[] = "Hans";
-    char last[] = {'Z', 'i', 'm', 'm', 'e', 'r', 0};
-
     char *pinitial = &initial;
-    char *pfirst = &first[0];
-    char *plast = &last[0];
-    char initial = 'H';
-    char *pinitial = &initial;
+    char name[] = "Hans Zimmer";
+    char *pname = &name[0];
  
     // village population: 243
     unsigned char village = 243;

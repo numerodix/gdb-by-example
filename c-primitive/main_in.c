@@ -5,7 +5,6 @@
 
 int main(int argc, char **argv) {
 // {{<snippets/chars>}}
-// {{<snippets/char>}}
  
 // {{<snippets/unsigned-char>}}
 
