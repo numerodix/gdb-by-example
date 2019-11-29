@@ -8,10 +8,10 @@
 ### char
 
 ```
-    char initial = 'H';
-    char *pinitial = &initial;
-    char name[] = "Hans Zimmer";
-    char *pname = &name[0];
+char initial = 'H';
+char *pinitial = &initial;
+char name[] = "Hans Zimmer";
+char *pname = &name[0];
 ```
 
 #### char
@@ -66,11 +66,11 @@
 - Max: 255
 
 ```
-    // village population: 243
-    unsigned char village = 243;
-    unsigned char *pvillage = &village;
-    unsigned char villages[] = {243, 113, 54};
-    unsigned char *pvillages = &villages[0];
+// village population: 243
+unsigned char village = 243;
+unsigned char *pvillage = &village;
+unsigned char villages[] = {243, 113, 54};
+unsigned char *pvillages = &villages[0];
 ```
 
 #### unsigned char
@@ -129,11 +129,11 @@
 - Max: 65,535
 
 ```
-    // town population: 61,000
-    unsigned short town = 61000;
-    unsigned short *ptown = &town;
-    unsigned short towns[] = {61000, 33109, 41001};
-    unsigned short *ptowns = &towns[0];
+// town population: 61,000
+unsigned short town = 61000;
+unsigned short *ptown = &town;
+unsigned short towns[] = {61000, 33109, 41001};
+unsigned short *ptowns = &towns[0];
 ```
 
 #### unsigned short
@@ -192,11 +192,11 @@
 - Max: 4,294,967,295
 
 ```
-    // planet population: 4,043,309,055
-    unsigned int planet = 4043309055;
-    unsigned int *pplanet = &planet;
-    unsigned int planets[] = {planet, planet / 2, planet / 6};
-    unsigned int *pplanets = &planets[0];
+// planet population: 4,043,309,055
+unsigned int planet = 4043309055;
+unsigned int *pplanet = &planet;
+unsigned int planets[] = {planet, planet / 2, planet / 6};
+unsigned int *pplanets = &planets[0];
 ```
 
 #### unsigned int
@@ -255,11 +255,11 @@
 - Max: 18,446,744,073,709,551,615
 
 ```
-    // universe population: 10,376,293,541,461,622,784
-    unsigned long long universe = 10376293541461622784LLU;
-    unsigned long long *puniverse = &universe;
-    unsigned long long universes[] = {universe, universe / 2, universe / 6};
-    unsigned long long *puniverses = &universes[0];
+// universe population: 10,376,293,541,461,622,784
+unsigned long long universe = 10376293541461622784LLU;
+unsigned long long *puniverse = &universe;
+unsigned long long universes[] = {universe, universe / 2, universe / 6};
+unsigned long long *puniverses = &universes[0];
 ```
 
 #### unsigned long long
