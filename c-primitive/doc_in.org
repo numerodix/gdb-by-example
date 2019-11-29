@@ -18,6 +18,7 @@
 | show type            | `ptype initial` | `char`   |
 | **print as default** | `p initial`     | `72 'H'` |
 | print as number      | `p/d initial`   | `72`     |
+| examine as char      | `x/c &initial`  | `72 'H'` |
 
 #### char* (to a single char)
 
@@ -30,20 +31,22 @@
 
 #### char[] (as a string)
 
-| Format               | Command      | Output          |
-|----------------------+--------------+-----------------|
-| show type            | `ptype name` | `char [12]`     |
-| **print as default** | `p name`     | `"Hans Zimmer"` |
-| examine as char      | `x/c name`   | `72 'H'`        |
+| Format                | Command      | Output                        |
+|-----------------------+--------------+-------------------------------|
+| show type             | `ptype name` | `char [12]`                   |
+| **print as default**  | `p name`     | `"Hans Zimmer"`               |
+| print as number array | `p/d name`   | `{72, 97, 110, 115, 32, ...}` |
+| **examine as string** | `x/s name`   | `"Hans Zimmer"`               |
 
 #### char* (as a string)
 
-| Format                      | Command       | Output                                |
-|-----------------------------+---------------+---------------------------------------|
-| show type                   | `ptype pname` | `char *`                              |
-| **print as default**        | `p pname`     | `"Hans Zimmer"`                       |
-| examine as char             | `x/c name`    | `72 'H'`                              |
-| examine as string with size | `x/12c name`  | `72 'H'  97 'a'  110 'n' 115 's' ...` |
+| Format                         | Command       | Output                                |
+|--------------------------------+---------------+---------------------------------------|
+| show type                      | `ptype pname` | `char *`                              |
+| **print as default**           | `p pname`     | `"Hans Zimmer"`                       |
+| examine as char                | `x/c name`    | `72 'H'`                              |
+| **examine as chars with size** | `x/12c name`  | `72 'H'  97 'a'  110 'n' 115 's' ...` |
+| **examine as string**          | `x/s pname`   | `"Hans Zimmer"`                       |
 
 
 
