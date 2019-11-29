@@ -10,6 +10,8 @@
 ```
     char initial = 'H';
     char *pinitial = &initial;
+    char name[] = "Hans Zimmer";
+    char *pname = &name[0];
 ```
 
 #### char
@@ -19,9 +21,37 @@
 | show type            | `ptype initial` | `char`   |
 | **print as default** | `p initial`     | `72 'H'` |
 | print as number      | `p/d initial`   | `72`     |
-| **examine as char**  | `x/c pinitial`  | `72 'H'` |
+| examine as char      | `x/c &initial`  | `72 'H'` |
 
-#### char * (as a string)
+#### char* (to a single char)
+
+| Format                     | Command          | Output                     |
+|----------------------------|------------------|----------------------------|
+| show type                  | `ptype pinitial` | `char *`                   |
+| print as default           | `p pinitial`     | `"H\363H\356\377\377\377"` |
+| **print deref as default** | `p *pinitial`    | `72 'H'`                   |
+| **examine as char**        | `x/c pinitial`   | `72 'H'`                   |
+
+#### char[] (as a string)
+
+| Format                | Command      | Output                        |
+|-----------------------|--------------|-------------------------------|
+| show type             | `ptype name` | `char [12]`                   |
+| **print as default**  | `p name`     | `"Hans Zimmer"`               |
+| print as number array | `p/d name`   | `{72, 97, 110, 115, 32, ...}` |
+| **examine as string** | `x/s name`   | `"Hans Zimmer"`               |
+
+#### char* (as a string)
+
+| Format                         | Command       | Output                                |
+|--------------------------------|---------------|---------------------------------------|
+| show type                      | `ptype pname` | `char *`                              |
+| **print as default**           | `p pname`     | `"Hans Zimmer"`                       |
+| print deref as default         | `p *pname`    | `72 'H'`                              |
+| print deref as string          | `p/s *pname`  | `72 'H'`                              |
+| examine as char                | `x/c pname`   | `72 'H'`                              |
+| **examine as chars with size** | `x/12c name`  | `72 'H'  97 'a'  110 'n' 115 's' ...` |
+| **examine as string**          | `x/s pname`   | `"Hans Zimmer"`                       |
 
 
 
@@ -278,131 +308,3 @@
 | print deref as signed           | `p/d *puniverses`  | `-8070450532247928832`     |
 | examine as default              | `x puniverses`     | `10376293541461622784`     |
 | **examine as three long longs** | `x/3ug puniverses` | `10376293541461622784 ...` |
-
-
-
-## Characters and strings
-
-### Code
-
-```
-    char initial = 'H';
-    char first[] = "Hans";
-    char last[] = {'Z', 'i', 'm', 'm', 'e', 'r', 0};
-
-    char *pinitial = &initial;
-    char *pfirst = &first[0];
-    char *plast = &last[0];
-```
-
-### char
-
-#### char
-
-```
-    char initial = 'H';
-    char *pinitial = &initial;
-```
-
-| Format           | Command         | Output   |
-|------------------|-----------------|----------|
-| show type        | `ptype initial` | `char`   |
-| print as default | `p initial`     | `72 'H'` |
-| print as number  | `p/d initial`   | `72`     |
-| examine as char  | `x/c pinitial`  | `72 'H'` |
-
-
-### Type and size
-
-gdb knows the size and type of the character variables:
-
-```
-(gdb) ptype initial
-type = char
-(gdb) ptype first
-type = char [5]
-(gdb) ptype last
-type = char [7]
-```
-
-But all it knows about the pointer variables is that they're pointers to a char:
-
-```
-(gdb) ptype pinitial 
-type = char *
-(gdb) ptype pfirst 
-type = char *
-```
-
-### Displaying character variables
-
-As chars/strings - this is gdb's default formatting:
-
-```
-(gdb) p initial
-$13 = 72 'H'
-(gdb) p first
-$14 = "Hans"
-(gdb) p last
-$15 = "Zimmer"
-```
-
-As numbers:
-
-```
-(gdb) p/d initial
-$16 = 72
-(gdb) p/d first
-$17 = {72, 97, 110, 115, 0}
-```
-
-Using the `x` command:
-
-```
-(gdb) x/c &initial
-0x7fffffffe07f: 72 'H'
-(gdb) x &first
-0x7fffffffe09c: "Hans"
-(gdb) x/s &first
-0x7fffffffe09c: "Hans"
-```
-
-### Displaying pointers to chars
-
-```
-(gdb) p pinitial        # not very useful
-$58 = 0x7fffffffe07f "H\177\340\377\377\377\177"
-(gdb) p *pinitial       # deference
-$56 = 72 'H'
-(gdb) p/c *pinitial     # and display as char
-$57 = 72 'H'
-(gdb) x/c pinitial
-0x7fffffffe07f: 72 'H'
-```
-
-### Display pointers to strings
-
-With the default formatter gdb displays the pointer value and (optimistically?) dereferences it and displays the bytes as a null terminated string.
-
-```
-(gdb) p pfirst   
-$63 = 0x7fffffffe09c "Hans"
-```
-
-With the `x` command:
-
-```
-(gdb) x/s pfirst                # same end result
-0x7fffffffe09c: "Hans"
-(gdb) x/5c pfirst               # show me 5 chars
-0x7fffffffe09c: 72 'H'  97 'a'  110 'n' 115 's' 0 '\000'
-```
-
-Trying to deference the pointer confuses gdb:
-
-```
-(gdb) p *pfirst 
-$78 = 72 'H'
-(gdb) p/s *pfirst               # doesn't help
-$79 = 72 'H'
-```
