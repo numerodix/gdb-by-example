@@ -2,6 +2,27 @@
 
 
 
+## Characters and strings
+
+
+### char
+
+```
+    char initial = 'H';
+    char *pinitial = &initial;
+```
+
+#### char
+
+| Format           | Command         | Output   |
+|------------------|-----------------|----------|
+| show type        | `ptype initial` | `char`   |
+| print as default | `p initial`     | `72 'H'` |
+| print as number  | `p/d initial`   | `72`     |
+| examine as char  | `x/c pinitial`  | `72 'H'` |
+
+
+
 ## Unsigned integers
 
 
