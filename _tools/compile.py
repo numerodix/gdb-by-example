@@ -58,6 +58,10 @@ def build_md_toc(level_zero, spec):
 
 def create_toc(level_from, level_to, source, cur_content):
     content = cur_content
+    if source != '.':
+        with open(source) as f:
+            content = f.read()
+
     lines = content.split('\n')
 
     spec = []
@@ -70,6 +74,8 @@ def create_toc(level_from, level_to, source, cur_content):
 
             if level_from <= level <= level_to:
                 url = '#' + heading.replace(' ', '-').lower()
+                if source != '.':
+                    url = '%s%s' % (source, url)
                 spec.append((level, heading, url))
 
     return build_md_toc(level_from, spec)
