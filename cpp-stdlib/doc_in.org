@@ -24,6 +24,7 @@ $1 = "Ramin Djawadi"
 $2 = "Ramin Djawadi"
 
 # print as raw
+(gdb) p/r name
 $3 = {
   static npos = 18446744073709551615, 
   _M_dataplus = {
