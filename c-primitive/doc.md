@@ -622,3 +622,42 @@ float *pparticles = &particles[0];
 ```
 
 #### float
+
+| Format               | Command          | Output           |
+|----------------------|------------------|------------------|
+| show type            | `ptype electron` | `float`          |
+| **print as default** | `p electron`     | `9.10000018e-31` |
+| **print as float**   | `p/f electron`   | `9.10000018e-31` |
+
+#### float* (to a single float)
+
+| Format                      | Command           | Output           |
+|-----------------------------|-------------------|------------------|
+| show type                   | `ptype pelectron` | `float *`        |
+| print as default            | `p pelectron`     | `0x7fffffffdefc` |
+| **print deref as default**  | `p *pelectron`    | `9.10000018e-31` |
+| **print deref as float**    | `p/f *pelectron`  | `9.10000018e-31` |
+| **examine as default**      | `x pelectron`     | `9.10000018e-31` |
+| **examine as single float** | `x/1fw pelectron` | `9.10000018e-31` |
+
+#### float[]
+
+| Format                      | Command           | Output                               |
+|-----------------------------|-------------------|--------------------------------------|
+| show type                   | `ptype particles` | `float [2]`                          |
+| **print as default**        | `p particles`     | `{9.10000018e-31, 1.67000005e-27}`   |
+| **print as float**          | `p/f particles`   | `{9.10000018e-31, 1.67000005e-27}`   |
+| **print as deref array**    | `p *particles@2`  | `{9.10000018e-31, 1.67000005e-27}`   |
+| examine as default          | `x particles`     | `0x7fffffffdfc0: 9.10000018e-31`     |
+| **examine as three floats** | `x/3fw particles` | `9.10000018e-31  1.67000005e-27 ...` |
+
+#### float* (to an array)
+
+| Format                          | Command            | Output                               |
+|---------------------------------|--------------------|--------------------------------------|
+| show type                       | `ptype pparticles` | `float *`                            |
+| print as default                | `p pparticles`     | `0x7fffffffdfc0`                     |
+| print deref as float            | `p/f *pparticles`  | `9.10000018e-31`                     |
+| **print as deref array**        | `p *pparticles@2`  | `{9.10000018e-31, 1.67000005e-27}`   |
+| examine as default              | `x pparticles`     | `9.10000018e-31`                     |
+| **examine as three long longs** | `x/3fw pparticles` | `9.10000018e-31  1.67000005e-27 ...` |
