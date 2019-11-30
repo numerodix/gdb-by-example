@@ -33,6 +33,7 @@ rx_toc = re.compile(
     pat_close
 )
 
+rx_md_codeblock = re.compile('^[`]{3}')
 rx_md_headline = re.compile('^(?P<level>[#]+)[ \t]*(?P<heading>.*)')
 
 rx_table_delim = re.compile('[-][+][-]')
@@ -70,17 +71,25 @@ def create_toc(level_from, level_to, source, cur_content):
 
     spec = []
 
+    in_code_block = False
     for line in lines:
-        match = rx_md_headline.search(line)
-        if match:
-            level = len(match.group('level'))
-            heading = match.group('heading').strip()
+        if rx_md_codeblock.search(line):
+            if not in_code_block:
+                in_code_block = True
+            else:
+                in_code_block = False
 
-            if level_from <= level <= level_to:
-                url = '#' + heading.replace(' ', '-').lower()
-                if source != SOURCE_SELF:
-                    url = '%s%s' % (source, url)
-                spec.append((level, heading, url))
+        if not in_code_block:
+            match = rx_md_headline.search(line)
+            if match:
+                level = len(match.group('level'))
+                heading = match.group('heading').strip()
+
+                if level_from <= level <= level_to:
+                    url = '#' + heading.replace(' ', '-').lower()
+                    if source != SOURCE_SELF:
+                        url = '%s%s' % (source, url)
+                    spec.append((level, heading, url))
 
     return build_md_toc(level_from, spec)
 
