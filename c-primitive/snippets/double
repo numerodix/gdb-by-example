@@ -1,0 +1,5 @@
+// the mass of the universe: 1.5e53
+double mass = 1.5e53;
+double *pmass = &mass;
+double masses[] = {mass, mass * 3.0};
+double *pmasses = &masses[0];
