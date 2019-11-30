@@ -26,6 +26,9 @@ Why gdb by example, doesn't gdb just know how to display things in the way we wa
 
 * [C++ standard library](cpp-stdlib/doc.md#c++-standard-library)
   * [string](cpp-stdlib/doc.md#string)
+* [show type](cpp-stdlib/doc.md#show-type)
+* [print as deref array](cpp-stdlib/doc.md#print-as-deref-array)
+* [print as raw](cpp-stdlib/doc.md#print-as-raw)
 
 ## Tools used
 
