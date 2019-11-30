@@ -13,6 +13,8 @@
   * [short](#short)
   * [int](#int)
   * [long long](#long-long)
+* [Floating point numbers](#floating-point-numbers)
+  * [float](#float)
 
 
 ## Characters and strings
@@ -581,3 +583,71 @@ long long *pdeficits = &deficits[0];
 | print deref as signed           | `p/d *pdeficits`  | `-8220802194093872013`     |
 | examine as default              | `x pdeficits`     | `-8220802194093872013`     |
 | **examine as three long longs** | `x/3dg pdeficits` | `-8220802194093872013 ...` |
+
+
+
+## Floating point numbers
+
+
+
+### float
+
+- Size: 4 bytes / 32 bits
+- Min: -3.4e-38
+- Max: 3.4e38
+
+```
+// mass of photon: 8.56e-38
+float photon = 8.56e-38;
+float *pphoton = &photon;
+// add electron and proton
+float particles[] = {photon, 9.10e-31, 1.67e-27};
+float *pparticles = &particles[0];
+```
+
+#### unsigned char
+
+| Format                | Command         | Output          |
+|-----------------------|-----------------|-----------------|
+| show type             | `ptype village` | `unsigned char` |
+| print as default      | `p village`     | `243 '\363'`    |
+| **print as unsigned** | `p/u village`   | `243`           |
+| print as signed       | `p/d village`   | `-13`           |
+| display as binary     | `p/t village`   | `11110011`      |
+| display as hex        | `p/x village`   | `0xf3`          |
+
+#### unsigned char* (to a single char)
+
+| Format                          | Command          | Output                         |
+|---------------------------------|------------------|--------------------------------|
+| show type                       | `ptype pvillage` | `unsigned char *`              |
+| print as default                | `p pvillage`     | `0x7fffffffdfef "\363\356..."` |
+| print deref as default          | `p *pvillage`    | `243 '\363'`                   |
+| **print deref as unsigned**     | `p/u *pvillage`  | `243`                          |
+| print deref as signed           | `p/d *pvillage`  | `-13`                          |
+| examine as default              | `x pvillage`     | `0x7fffffffdfef: 11110011`     |
+| **examine as single char/byte** | `x/1ub pvillage` | `243`                          |
+
+#### unsigned char[]
+
+| Format                     | Command          | Output                         |
+|----------------------------|------------------|--------------------------------|
+| show type                  | `ptype villages` | `unsigned char [3]`            |
+| print as default           | `p villages`     | `"\363q6"`                     |
+| **print as unsigned**      | `p/u villages`   | `{243, 113, 54}`               |
+| print as signed            | `p/d villages`   | `{-13, 113, 54}`               |
+| examine as default         | `x villages`     | `0x7fffffffe019: 11110011`     |
+| **examine as three chars** | `x/3ub villages` | `243     113     54`           |
+| examine ... in binary      | `x/3tb villages` | `11110011  01110001  00110110` |
+| examine ... in hex         | `x/3xb villages` | `0xf3  0x71  0x36`             |
+
+#### unsigned char* (to an array)
+
+| Format                     | Command           | Output                       |
+|----------------------------|-------------------|------------------------------|
+| show type                  | `ptype pvillages` | `unsigned char *`            |
+| print as default           | `p pvillages`     | `0x7fffffffe019 "\363q6..."` |
+| print deref as unsigned    | `p/u *pvillages`  | `243`                        |
+| print deref as signed      | `p/d *pvillages`  | `-13`                        |
+| examine as default         | `x pvillages`     | `0x7fffffffe019: -13`        |
+| **examine as three chars** | `x/3ub pvillages` | `243     113     54`         |

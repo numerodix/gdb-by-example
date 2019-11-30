@@ -59,5 +59,13 @@ int main(int argc, char **argv) {
     long long deficits[] = {deficit, deficit / 2, deficit / 6};
     long long *pdeficits = &deficits[0];
 
+
+    // mass of photon: 8.56e-38
+    float photon = 8.56e-38;
+    float *pphoton = &photon;
+    // add electron and proton
+    float particles[] = {photon, 9.10e-31, 1.67e-27};
+    float *pparticles = &particles[0];
+
     segfault
 }
