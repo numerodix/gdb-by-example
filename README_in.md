@@ -5,6 +5,9 @@ Why gdb by example, doesn't gdb just know how to display things in the way we wa
 ## C
 
 {{<toc,levels:1-3,source:c-primitive/doc.md>}}
+
+## C++
+
 {{<toc,levels:1-3,source:cpp-stdlib/doc.md>}}
 
 ## Tools used

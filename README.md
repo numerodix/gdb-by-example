@@ -21,6 +21,9 @@ Why gdb by example, doesn't gdb just know how to display things in the way we wa
   * [Floating point numbers](c-primitive/doc.md#floating-point-numbers)
     * [float](c-primitive/doc.md#float)
     * [double](c-primitive/doc.md#double)
+
+## C++
+
 * [C++ standard library](cpp-stdlib/doc.md#c++-standard-library)
   * [String](cpp-stdlib/doc.md#string)
 

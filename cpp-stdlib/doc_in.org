@@ -1,0 +1,16 @@
+# C++ standard library
+
+
+{{<toc,levels:2-3,source:.>}}
+
+
+## String
+
+```
+{{<include:snippets/string>}}
+```
+
+| Format                   | Command                                      | Output        |
+|--------------------------+----------------------------------------------+---------------|
+| show type                | `ptype name`                                 | std::string`` |
+| **print as deref array** | `p *name._M_local_buf@name._M_string_length` | 
