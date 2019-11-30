@@ -83,6 +83,7 @@
 | show type                  | `ptype psymbol` | `int *`             |
 | print as default           | `p psymbol`     | `L"한\xf0ffffff...` |
 | **print deref as default** | `p *psymbol`    | `54620 L'한'`       |
+| print deref as number      | `p/u *psymbol`  | `54620`             |
 
 #### wchar_t[] (as a string)
 
@@ -90,7 +91,7 @@
 |--------------------------------+---------------+---------------------|
 | show type                      | `ptype japan` | `int [3]`           |
 | **print as default**           | `p japan`     | `L"日本"`           |
-| **print as deref array**       | `p *japan@12` | `L"日本"`           |
+| **print as deref array**       | `p *japan@3`  | `L"日本"`           |
 | print as number array          | `p/u japan`   | `{26085, 26412, 0}` |
 | **examine as chars with size** | `x/3uw japan` | `26085   26412   0` |
 
