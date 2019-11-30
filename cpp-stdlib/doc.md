@@ -15,12 +15,16 @@ std::string name{"Ramin Djawadi"};
 (gdb) ptype name
 type = std::string
 
-# print as deref array
-(gdb) p *name._M_local_buf@name._M_string_length
+# print as default
+(gdb) p name
 $1 = "Ramin Djawadi"
 
+# print as deref array
+(gdb) p *name._M_local_buf@name._M_string_length
+$2 = "Ramin Djawadi"
+
 # print as raw
-$2 = {
+$3 = {
   static npos = 18446744073709551615, 
   _M_dataplus = {
     <std::allocator<char>> = {
