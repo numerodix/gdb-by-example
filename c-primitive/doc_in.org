@@ -366,3 +366,62 @@ XXX
 | print deref as signed      | `p/d *psurfaces`  | `-121`                        |
 | examine as default         | `x psurfaces`     | `0x7fffffffe029: -121`        |
 | **examine as three chars** | `x/3db psurfaces` | `-121   -97   -56`            |
+
+
+
+### short
+
+- Size: 2 bytes / 16 bits
+- Min: -32,768
+- Max: 32,767
+
+```
+{{<include:snippets/signed-short>}}
+```
+
+#### short
+
+| Format               | Command         | Output             |
+|----------------------+-----------------+--------------------|
+| show type            | `ptype balance` | `short`            |
+| **print as default** | `p balance`     | `-31500`           |
+| print as unsigned    | `p/u balance`   | `34036`            |
+| **print as signed**  | `p/d balance`   | `-31500`           |
+| display as binary    | `p/t balance`   | `1000010011110100` |
+| display as hex       | `p/x balance`   | `0x84f4`           |
+
+#### short* (to a single short)
+
+| Format                      | Command          | Output                |
+|-----------------------------+------------------+-----------------------|
+| show type                   | `ptype pbalance` | `short *`             |
+| print as default            | `p pbalance`     | `0x7fffffffdf0e`      |
+| **print deref as default**  | `p *pbalance`    | `-31500`              |
+| print deref as unsigned     | `p/u *pbalance`  | `34036`               |
+| **print deref as signed**   | `p/d *pbalance`  | `-31500`              |
+| examine as default          | `x pbalance`     | `0x7fffffffdf0e: -12` |
+| **examine as single short** | `x/1dh pbalance` | `-31500`              |
+
+#### short[]
+
+| Format                      | Command          | Output                     |
+|-----------------------------+------------------+----------------------------|
+| show type                   | `ptype balances` | `short [3]`                |
+| **print as default**        | `p balances`     | `{-31500, -29130, -15120}` |
+| print as unsigned           | `p/u balances`   | `{34036, 36406, 50416}`    |
+| **print as signed**         | `p/d balances`   | `{-31500, -29130, -15120}` |
+| examine as default          | `x balances`     | `0x7fffffffdfc2: -31500`   |
+| **examine as three shorts** | `x/3uh balances` | `-31500   -29130   -15120` |
+| examine ... in binary       | `x/3th balances` | `1000010011110100 ...`     |
+| examine ... in hex          | `x/3xh balances` | `0x84f4  0x8e36  0xc4f0`   |
+
+#### short* (to an array)
+
+| Format                      | Command           | Output                     |
+|-----------------------------+-------------------+----------------------------|
+| show type                   | `ptype pbalances` | `short *`                  |
+| print as default            | `p pbalances`     | `0x7fffffffdfc2`           |
+| print deref as unsigned     | `p/u *pbalances`  | `34036`                    |
+| print deref as signed       | `p/d *pbalances`  | `-31500`                   |
+| examine as default          | `x pbalances`     | `-31500`                   |
+| **examine as three shorts** | `x/3xh pbalances` | `-31500   -29130   -15120` |
