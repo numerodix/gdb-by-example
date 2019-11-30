@@ -21,3 +21,8 @@ Why gdb by example, doesn't gdb just know how to display things in the way we wa
   * [Floating point numbers](c-primitive/doc.md#floating-point-numbers)
     * [float](c-primitive/doc.md#float)
     * [double](c-primitive/doc.md#double)
+
+## Tools used
+
+* GCC 7.4.0
+* gdb 8.1.0.20180409-git
