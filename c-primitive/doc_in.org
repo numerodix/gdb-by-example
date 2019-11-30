@@ -363,6 +363,6 @@ XXX
 | show type                  | `ptype psurfaces` | `char *`                      |
 | print as default           | `p psurfaces`     | `0x7fffffffe029 "\207\237...` |
 | print deref as unsigned    | `p/u *psurfaces`  | `135`                         |
-| **print deref as signed**  | `p/d *psurfaces`  | `-121`                        |
-| **examine as default**     | `x psurfaces`     | `0x7fffffffe029: -121`        |
+| print deref as signed      | `p/d *psurfaces`  | `-121`                        |
+| examine as default         | `x psurfaces`     | `0x7fffffffe029: -121`        |
 | **examine as three chars** | `x/3db psurfaces` | `-121   -97   -56`            |
