@@ -25,5 +25,7 @@ int main(int argc, char **argv) {
 // {{<include:snippets/signed-long-long,indent:4>}}
 
 
+// {{<include:snippets/float,indent:4>}}
+
     segfault
 }
