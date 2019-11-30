@@ -15,6 +15,7 @@
   * [long long](#long-long)
 * [Floating point numbers](#floating-point-numbers)
   * [float](#float)
+  * [double](#double)
 
 
 ## Characters and strings
@@ -615,6 +616,7 @@ long long *pdeficits = &deficits[0];
 - Max: 3.40e38
 
 ```
+// the mass of an electron: 9.10e-31
 float electron = 9.10e-31;
 float *pelectron = &electron;
 float particles[] = {electron, 1.67e-27};  // add a proton
@@ -661,3 +663,60 @@ float *pparticles = &particles[0];
 | **print as deref array**  | `p *pparticles@2`  | `{9.10000018e-31, 1.67000005e-27}` |
 | examine as default        | `x pparticles`     | `9.10000018e-31`                   |
 | **examine as two floats** | `x/2fw pparticles` | `9.10000018e-31  1.67000005e-27`   |
+
+
+
+### double
+
+- Size: 8 bytes / 64 bits
+- Min: -1.79e308
+- Max: 1.79e308
+
+```
+// the mass of the universe: 1.5e53
+double mass = 1.5e53;
+double *pmass = &mass;
+double masses[] = {mass, mass * 3.0};
+double *pmasses = &masses[0];
+```
+
+#### double
+
+| Format               | Command      | Output    |
+|----------------------|--------------|-----------|
+| show type            | `ptype mass` | `double`  |
+| **print as default** | `p mass`     | `1.5e+53` |
+| **print as double**  | `p/f mass`   | `1.5e+53` |
+
+#### double* (to a single double)
+
+| Format                       | Command       | Output            |
+|------------------------------|---------------|-------------------|
+| show type                    | `ptype pmass` | `double *`        |
+| print as default             | `p pmass`     | `0x7fffffffdee8`  |
+| **print deref as default**   | `p *pmass`    | `1.5e+53`         |
+| **print deref as double**    | `p/f *pmass`  | `1.5e+53`         |
+| examine as default           | `x pmass`     | `-1.10667741e-17` |
+| **examine as single double** | `x/1fg pmass` | `1.5e+53`         |
+
+#### double[]
+
+| Format                     | Command        | Output               |
+|----------------------------|----------------|----------------------|
+| show type                  | `ptype masses` | `double [2]`         |
+| **print as default**       | `p masses`     | `{1.5e+53, 4.5e+53}` |
+| **print as double**        | `p/f masses`   | `{1.5e+53, 4.5e+53}` |
+| **print as deref array**   | `p *masses@2`  | `{1.5e+53, 4.5e+53}` |
+| examine as default         | `x masses`     | `-1.10667741e-17`    |
+| **examine as two doubles** | `x/2fg masses` | `{1.5e+53, 4.5e+53}` |
+
+#### double* (to an array)
+
+| Format                     | Command         | Output               |
+|----------------------------|-----------------|----------------------|
+| show type                  | `ptype pmasses` | `double *`           |
+| print as default           | `p pmasses`     | `0x7fffffffdfe0`     |
+| print deref as double      | `p/f *pmasses`  | `1.5e+53`            |
+| **print as deref array**   | `p *pmasses@2`  | `{1.5e+53, 4.5e+53}` |
+| examine as default         | `x pmasses`     | `1.5e+53`            |
+| **examine as two doubles** | `x/2fg pmasses` | `{1.5e+53, 4.5e+53}` |

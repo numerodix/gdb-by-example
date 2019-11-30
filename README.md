@@ -19,3 +19,4 @@ Why gdb by example, doesn't gdb just know how to display things in the way we wa
     * [long long](c-primitive/doc.md#long-long)
   * [Floating point numbers](c-primitive/doc.md#floating-point-numbers)
     * [float](c-primitive/doc.md#float)
+    * [double](c-primitive/doc.md#double)

@@ -27,5 +27,7 @@ int main(int argc, char **argv) {
 
 // {{<include:snippets/float,indent:4>}}
 
+// {{<include:snippets/double,indent:4>}}
+
     segfault
 }
