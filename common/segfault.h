@@ -1,3 +1,3 @@
 #include <signal.h>
 
-#define segfault raise(SIGSEGV);
+#define segfault { raise(SIGSEGV); }

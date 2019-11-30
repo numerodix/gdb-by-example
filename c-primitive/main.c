@@ -77,5 +77,5 @@ int main(int argc, char **argv) {
     double masses[] = {mass, mass * 3.0};
     double *pmasses = &masses[0];
 
-    segfault
+    segfault;
 }

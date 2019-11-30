@@ -31,5 +31,5 @@ int main(int argc, char **argv) {
 
 // {{<include:snippets/double,indent:4>}}
 
-    segfault
+    segfault;
 }
