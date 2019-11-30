@@ -3,6 +3,7 @@
 
 * [Characters and strings](#characters-and-strings)
   * [char](#char)
+  * [wchar_t](#wchar_t)
 * [Unsigned integers](#unsigned-integers)
   * [unsigned char](#unsigned-char)
   * [unsigned short](#unsigned-short)
@@ -73,6 +74,57 @@ char *pname = &name[0];
 | examine as char                | `x/c pname`   | `72 'H'`                              |
 | **examine as chars with size** | `x/12c name`  | `72 'H'  97 'a'  110 'n' 115 's' ...` |
 | **examine as string**          | `x/s pname`   | `"Hans Zimmer"`                       |
+
+
+
+### wchar_t
+
+- Size: 2-4 bytes / 32-64 bits
+- Charset: Unicode (when 4 bytes)
+
+```
+wchar_t symbol = L'\xd55c';
+wchar_t *psymbol = &symbol;
+wchar_t japan[] = L"\x65e5\x672c";
+wchar_t *pjapan = &japan[0];
+```
+
+#### wchar_t
+
+| Format               | Command        | Output        |
+|----------------------|----------------|---------------|
+| show type            | `ptype symbol` | `int`         |
+| **print as default** | `p symbol`     | `54620 L'한'` |
+| print as number      | `p/u symbol`   | `54620`       |
+
+#### char* (to a single char)
+
+| Format                     | Command         | Output              |
+|----------------------------|-----------------|---------------------|
+| show type                  | `ptype psymbol` | `int *`             |
+| print as default           | `p psymbol`     | `L"한\xf0ffffff...` |
+| **print deref as default** | `p *psymbol`    | `54620 L'한'`       |
+
+#### char[] (as a string)
+
+| Format                         | Command       | Output              |
+|--------------------------------|---------------|---------------------|
+| show type                      | `ptype japan` | `int [3]`           |
+| **print as default**           | `p japan`     | `L"日本"`           |
+| **print as deref array**       | `p *japan@12` | `L"日本"`           |
+| print as number array          | `p/u japan`   | `{26085, 26412, 0}` |
+| **examine as chars with size** | `x/3uw japan` | `26085   26412   0` |
+
+#### char* (to a string)
+
+| Format                         | Command        | Output              |
+|--------------------------------|----------------|---------------------|
+| show type                      | `ptype pjapan` | `int *`             |
+| **print as default**           | `p pjapan`     | `L"日本"`           |
+| **print as deref array**       | `p *pjapan@3`  | `L"日本"`           |
+| print deref as default         | `p *pjapan`    | `26085 L'日'`       |
+| print deref as string          | `p/s *pjapan`  | `26085`             |
+| **examine as chars with size** | `x/3uw pjapan` | `26085   26412   0` |
 
 
 

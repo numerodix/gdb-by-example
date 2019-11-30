@@ -1,10 +1,13 @@
 #include <signal.h>
+#include <wchar.h>
 
 #define segfault raise(SIGSEGV);
 
 
 int main(int argc, char **argv) {
-// {{<include:snippets/chars,indent:4>}}
+// {{<include:snippets/char,indent:4>}}
+
+// {{<include:snippets/wchar_t,indent:4>}}
  
 
 // {{<include:snippets/unsigned-char,indent:4>}}

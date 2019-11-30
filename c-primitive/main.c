@@ -1,4 +1,5 @@
 #include <signal.h>
+#include <wchar.h>
 
 #define segfault raise(SIGSEGV);
 
@@ -8,6 +9,11 @@ int main(int argc, char **argv) {
     char *pinitial = &initial;
     char name[] = "Hans Zimmer";
     char *pname = &name[0];
+
+    wchar_t symbol = L'\xd55c';
+    wchar_t *psymbol = &symbol;
+    wchar_t japan[] = L"\x65e5\x672c";
+    wchar_t *pjapan = &japan[0];
  
 
     // village population: 243

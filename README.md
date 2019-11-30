@@ -7,6 +7,7 @@ Why gdb by example, doesn't gdb just know how to display things in the way we wa
 * [C primitive types](c-primitive/doc.md#c-primitive-types)
   * [Characters and strings](c-primitive/doc.md#characters-and-strings)
     * [char](c-primitive/doc.md#char)
+    * [wchar_t](c-primitive/doc.md#wchar_t)
   * [Unsigned integers](c-primitive/doc.md#unsigned-integers)
     * [unsigned char](c-primitive/doc.md#unsigned-char)
     * [unsigned short](c-primitive/doc.md#unsigned-short)
