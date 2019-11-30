@@ -653,11 +653,11 @@ float *pparticles = &particles[0];
 
 #### float* (to an array)
 
-| Format                    | Command            | Output                               |
-|---------------------------|--------------------|--------------------------------------|
-| show type                 | `ptype pparticles` | `float *`                            |
-| print as default          | `p pparticles`     | `0x7fffffffdfc0`                     |
-| print deref as float      | `p/f *pparticles`  | `9.10000018e-31`                     |
-| **print as deref array**  | `p *pparticles@2`  | `{9.10000018e-31, 1.67000005e-27}`   |
-| examine as default        | `x pparticles`     | `9.10000018e-31`                     |
-| **examine as two floats** | `x/2fw pparticles` | `9.10000018e-31  1.67000005e-27 ...` |
+| Format                    | Command            | Output                             |
+|---------------------------|--------------------|------------------------------------|
+| show type                 | `ptype pparticles` | `float *`                          |
+| print as default          | `p pparticles`     | `0x7fffffffdfc0`                   |
+| print deref as float      | `p/f *pparticles`  | `9.10000018e-31`                   |
+| **print as deref array**  | `p *pparticles@2`  | `{9.10000018e-31, 1.67000005e-27}` |
+| examine as default        | `x pparticles`     | `9.10000018e-31`                   |
+| **examine as two floats** | `x/2fw pparticles` | `9.10000018e-31  1.67000005e-27`   |
