@@ -25,4 +25,4 @@ Why gdb by example, doesn't gdb just know how to display things in the way we wa
 ## Tools used
 
 * GCC 7.4.0
-* gdb 8.1.0.20180409-git
+* gdb 8.1.0
