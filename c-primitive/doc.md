@@ -80,7 +80,7 @@ char *pname = &name[0];
 ### wchar_t
 
 - Size: 2-4 bytes / 32-64 bits (depends on the platform)
-- Charset: Unicode (when 4 bytes)
+- Charset: UCS-2/UTF-16 (when 2 bytes), Unicode (when 4 bytes)
 
 ```
 wchar_t symbol = L'\xd55c';
