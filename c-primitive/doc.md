@@ -52,12 +52,13 @@ char *pname = &name[0];
 
 #### char[] (as a string)
 
-| Format                | Command      | Output                        |
-|-----------------------|--------------|-------------------------------|
-| show type             | `ptype name` | `char [12]`                   |
-| **print as default**  | `p name`     | `"Hans Zimmer"`               |
-| print as number array | `p/d name`   | `{72, 97, 110, 115, 32, ...}` |
-| **examine as string** | `x/s name`   | `"Hans Zimmer"`               |
+| Format                   | Command      | Output                        |
+|--------------------------|--------------|-------------------------------|
+| show type                | `ptype name` | `char [12]`                   |
+| **print as default**     | `p name`     | `"Hans Zimmer"`               |
+| **print as deref array** | `p *name@12` | `"Hans Zimmer"`               |
+| print as number array    | `p/d name`   | `{72, 97, 110, 115, 32, ...}` |
+| **examine as string**    | `x/s name`   | `"Hans Zimmer"`               |
 
 #### char* (to a string)
 
@@ -65,6 +66,7 @@ char *pname = &name[0];
 |--------------------------------|---------------|---------------------------------------|
 | show type                      | `ptype pname` | `char *`                              |
 | **print as default**           | `p pname`     | `"Hans Zimmer"`                       |
+| **print as deref array**       | `p *pname@12` | `"Hans Zimmer"`                       |
 | print deref as default         | `p *pname`    | `72 'H'`                              |
 | print deref as string          | `p/s *pname`  | `72 'H'`                              |
 | examine as char                | `x/c pname`   | `72 'H'`                              |
@@ -116,27 +118,29 @@ unsigned char *pvillages = &villages[0];
 
 #### unsigned char[]
 
-| Format                     | Command          | Output                         |
-|----------------------------|------------------|--------------------------------|
-| show type                  | `ptype villages` | `unsigned char [3]`            |
-| print as default           | `p villages`     | `"\363q6"`                     |
-| **print as unsigned**      | `p/u villages`   | `{243, 113, 54}`               |
-| print as signed            | `p/d villages`   | `{-13, 113, 54}`               |
-| examine as default         | `x villages`     | `0x7fffffffe019: 11110011`     |
-| **examine as three chars** | `x/3ub villages` | `243     113     54`           |
-| examine ... in binary      | `x/3tb villages` | `11110011  01110001  00110110` |
-| examine ... in hex         | `x/3xb villages` | `0xf3  0x71  0x36`             |
+| Format                     | Command           | Output                         |
+|----------------------------|-------------------|--------------------------------|
+| show type                  | `ptype villages`  | `unsigned char [3]`            |
+| print as default           | `p villages`      | `"\363q6"`                     |
+| **print as unsigned**      | `p/u villages`    | `{243, 113, 54}`               |
+| print as signed            | `p/d villages`    | `{-13, 113, 54}`               |
+| **print as deref array**   | `p/u *villages@3` | `{243, 113, 54}`               |
+| examine as default         | `x villages`      | `0x7fffffffe019: 11110011`     |
+| **examine as three chars** | `x/3ub villages`  | `243     113     54`           |
+| examine ... in binary      | `x/3tb villages`  | `11110011  01110001  00110110` |
+| examine ... in hex         | `x/3xb villages`  | `0xf3  0x71  0x36`             |
 
 #### unsigned char* (to an array)
 
-| Format                     | Command           | Output                       |
-|----------------------------|-------------------|------------------------------|
-| show type                  | `ptype pvillages` | `unsigned char *`            |
-| print as default           | `p pvillages`     | `0x7fffffffe019 "\363q6..."` |
-| print deref as unsigned    | `p/u *pvillages`  | `243`                        |
-| print deref as signed      | `p/d *pvillages`  | `-13`                        |
-| examine as default         | `x pvillages`     | `0x7fffffffe019: -13`        |
-| **examine as three chars** | `x/3ub pvillages` | `243     113     54`         |
+| Format                     | Command            | Output                       |
+|----------------------------|--------------------|------------------------------|
+| show type                  | `ptype pvillages`  | `unsigned char *`            |
+| print as default           | `p pvillages`      | `0x7fffffffe019 "\363q6..."` |
+| print deref as unsigned    | `p/u *pvillages`   | `243`                        |
+| print deref as signed      | `p/d *pvillages`   | `-13`                        |
+| **print as deref array**   | `p/u *pvillages@3` | `{243, 113, 54}`             |
+| examine as default         | `x pvillages`      | `0x7fffffffe019: -13`        |
+| **examine as three chars** | `x/3ub pvillages`  | `243     113     54`         |
 
 
 
@@ -185,6 +189,7 @@ unsigned short *ptowns = &towns[0];
 | **print as default**        | `p towns`     | `{61000, 33109, 41001}`   |
 | **print as unsigned**       | `p/u towns`   | `{61000, 33109, 41001}`   |
 | print as signed             | `p/d towns`   | `{-4536, -32427, -24535}` |
+| **print as deref array**    | `p *towns@3`  | `{61000, 33109, 41001}`   |
 | examine as default          | `x towns`     | `0x7fffffffe012: -4536`   |
 | **examine as three shorts** | `x/3uh towns` | `61000   33109   41001`   |
 | examine ... in binary       | `x/3th towns` | `1110111001001000 ...`    |
@@ -198,6 +203,7 @@ unsigned short *ptowns = &towns[0];
 | print as default            | `p ptowns`     | `0x7fffffffe012`        |
 | print deref as unsigned     | `p/u *ptowns`  | `61000`                 |
 | print deref as signed       | `p/d *ptowns`  | `-4536`                 |
+| **print as deref array**    | `p *ptowns@3`  | `{61000, 33109, 41001}` |
 | examine as default          | `x ptowns`     | `-4536`                 |
 | **examine as three shorts** | `x/3uh ptowns` | `61000   33109   41001` |
 
@@ -248,6 +254,7 @@ unsigned int *pplanets = &planets[0];
 | **print as default**      | `p planets`     | `{4043309055, 2021654527, ...}` |
 | **print as unsigned**     | `p/u planets`   | `{4043309055, 2021654527, ...}` |
 | print as signed           | `p/d planets`   | `{-251658241, 2021654527, ...}` |
+| **print as deref array**  | `p *planets@3`  | `{4043309055, 2021654527, ...}` |
 | examine as default        | `x planets`     | `0x7fffffffe00c: -251658241`    |
 | **examine as three ints** | `x/3uw planets` | `4043309055   2021654527  ...`  |
 | examine ... in binary     | `x/3tw planets` | `11110000111... ...`            |
@@ -261,6 +268,7 @@ unsigned int *pplanets = &planets[0];
 | print as default          | `p pplanets`     | `0x7fffffffe00c`                |
 | print deref as unsigned   | `p/u *pplanets`  | `4043309055`                    |
 | print deref as signed     | `p/d *pplanets`  | `-251658241`                    |
+| **print as deref array**  | `p *pplanets@3`  | `{4043309055, 2021654527, ...}` |
 | examine as default        | `x pplanets`     | `4043309055`                    |
 | **examine as three ints** | `x/3uw pplanets` | `4043309055   2021654527   ...` |
 
@@ -311,6 +319,7 @@ unsigned long long *puniverses = &universes[0];
 | **print as default**            | `p universes`     | `{10376293541461622784, ...}`  |
 | **print as unsigned**           | `p/u universes`   | `{10376293541461622784, ...}`  |
 | print as signed                 | `p/d universes`   | `{-8070450532247928832, ...}`  |
+| **print as deref array**        | `p *universes@3`  | `{10376293541461622784, ...}`  |
 | examine as default              | `x universes`     | `0x7fffffffe000: 1037629...`   |
 | **examine as three long longs** | `x/3ug universes` | `10376293541461622784 ... ...` |
 | examine ... in binary           | `x/3tg universes` | `100100000000... ...`          |
@@ -318,14 +327,15 @@ unsigned long long *puniverses = &universes[0];
 
 #### unsigned long long* (to an array)
 
-| Format                          | Command            | Output                     |
-|---------------------------------|--------------------|----------------------------|
-| show type                       | `ptype puniverses` | `unsigned long long *`     |
-| print as default                | `p puniverses`     | `0x7fffffffe000`           |
-| print deref as unsigned         | `p/u *puniverses`  | `10376293541461622784`     |
-| print deref as signed           | `p/d *puniverses`  | `-8070450532247928832`     |
-| examine as default              | `x puniverses`     | `10376293541461622784`     |
-| **examine as three long longs** | `x/3ug puniverses` | `10376293541461622784 ...` |
+| Format                          | Command            | Output                        |
+|---------------------------------|--------------------|-------------------------------|
+| show type                       | `ptype puniverses` | `unsigned long long *`        |
+| print as default                | `p puniverses`     | `0x7fffffffe000`              |
+| print deref as unsigned         | `p/u *puniverses`  | `10376293541461622784`        |
+| print deref as signed           | `p/d *puniverses`  | `-8070450532247928832`        |
+| **print as deref array**        | `p *puniverses@3`  | `{10376293541461622784, ...}` |
+| examine as default              | `x puniverses`     | `10376293541461622784`        |
+| **examine as three long longs** | `x/3ug puniverses` | `10376293541461622784 ...`    |
 
 
 
@@ -373,27 +383,29 @@ char *psurfaces = &surfaces[0];
 
 #### char[]
 
-| Format                     | Command          | Output                           |
-|----------------------------|------------------|----------------------------------|
-| show type                  | `ptype surfaces` | `char [3]`                       |
-| print as default           | `p surfaces`     | `"\207\237...`                   |
-| print as unsigned          | `p/u surfaces`   | `{135, 159, 200}`                |
-| **print as signed**        | `p/d surfaces`   | `{-121, -97, -56}`               |
-| examine as default         | `x surfaces`     | `0x7fffffffe029: -121`           |
-| **examine as three chars** | `x/3db surfaces` | `-121  -97  -56`                 |
-| examine ... in binary      | `x/3tb surfaces` | `10000111   10011111   11001000` |
-| examine ... in hex         | `x/3xb surfaces` | `0x87  0x9f  0xc8`               |
+| Format                     | Command           | Output                           |
+|----------------------------|-------------------|----------------------------------|
+| show type                  | `ptype surfaces`  | `char [3]`                       |
+| print as default           | `p surfaces`      | `"\207\237...`                   |
+| print as unsigned          | `p/u surfaces`    | `{135, 159, 200}`                |
+| **print as signed**        | `p/d surfaces`    | `{-121, -97, -56}`               |
+| **print as deref array**   | `p/d *surfaces@3` | `{-121, -97, -56}`               |
+| examine as default         | `x surfaces`      | `0x7fffffffe029: -121`           |
+| **examine as three chars** | `x/3db surfaces`  | `-121  -97  -56`                 |
+| examine ... in binary      | `x/3tb surfaces`  | `10000111   10011111   11001000` |
+| examine ... in hex         | `x/3xb surfaces`  | `0x87  0x9f  0xc8`               |
 
 #### char* (to an array)
 
-| Format                     | Command           | Output                        |
-|----------------------------|-------------------|-------------------------------|
-| show type                  | `ptype psurfaces` | `char *`                      |
-| print as default           | `p psurfaces`     | `0x7fffffffe029 "\207\237...` |
-| print deref as unsigned    | `p/u *psurfaces`  | `135`                         |
-| print deref as signed      | `p/d *psurfaces`  | `-121`                        |
-| examine as default         | `x psurfaces`     | `0x7fffffffe029: -121`        |
-| **examine as three chars** | `x/3db psurfaces` | `-121   -97   -56`            |
+| Format                     | Command            | Output                        |
+|----------------------------|--------------------|-------------------------------|
+| show type                  | `ptype psurfaces`  | `char *`                      |
+| print as default           | `p psurfaces`      | `0x7fffffffe029 "\207\237...` |
+| print deref as unsigned    | `p/u *psurfaces`   | `135`                         |
+| print deref as signed      | `p/d *psurfaces`   | `-121`                        |
+| **print as deref array**   | `p/d *psurfaces@3` | `{-121, -97, -56}`            |
+| examine as default         | `x psurfaces`      | `0x7fffffffe029: -121`        |
+| **examine as three chars** | `x/3db psurfaces`  | `-121   -97   -56`            |
 
 
 
@@ -442,6 +454,7 @@ short *pbalances = &balances[0];
 | **print as default**        | `p balances`     | `{-31500, -29130, -15120}` |
 | print as unsigned           | `p/u balances`   | `{34036, 36406, 50416}`    |
 | **print as signed**         | `p/d balances`   | `{-31500, -29130, -15120}` |
+| **print as deref array**    | `p *balances@3`  | `{-31500, -29130, -15120}` |
 | examine as default          | `x balances`     | `0x7fffffffdfc2: -31500`   |
 | **examine as three shorts** | `x/3uh balances` | `-31500   -29130   -15120` |
 | examine ... in binary       | `x/3th balances` | `1000010011110100 ...`     |
@@ -455,6 +468,7 @@ short *pbalances = &balances[0];
 | print as default            | `p pbalances`     | `0x7fffffffdfc2`           |
 | print deref as unsigned     | `p/u *pbalances`  | `34036`                    |
 | print deref as signed       | `p/d *pbalances`  | `-31500`                   |
+| **print as deref array**    | `p *pbalances@3`  | `{-31500, -29130, -15120}` |
 | examine as default          | `x pbalances`     | `-31500`                   |
 | **examine as three shorts** | `x/3xh pbalances` | `-31500   -29130   -15120` |
 
@@ -505,6 +519,7 @@ int *pprofits = &profits[0];
 | **print as default**      | `p profits`     | `{-2120401005, -1060200502, ...}` |
 | print as unsigned         | `p/u profits`   | `{2174566291, 3234766794, ...}`   |
 | **print as signed**       | `p/d profits`   | `{-2120401005, -1060200502, ...}` |
+| **print as deref array**  | `p *profits@3`  | `{-2120401005, -1060200502, ...}` |
 | examine as default        | `x profits`     | `0x7fffffffdfd4: -2120401005 `    |
 | **examine as three ints** | `x/3dw profits` | `-2120401005   -1060200502 ...`   |
 | examine ... in binary     | `x/3tw profits` | `1000000110... ...`               |
@@ -518,6 +533,7 @@ int *pprofits = &profits[0];
 | print as default          | `p pprofits`     | `0x7fffffffdfd4`                  |
 | print deref as unsigned   | `p/u *pprofits`  | `2174566291`                      |
 | print deref as signed     | `p/d *pprofits`  | `-2120401005`                     |
+| **print as deref array**  | `p *pprofits@3`  | `{-2120401005, -1060200502, ...}` |
 | examine as default        | `x pprofits`     | `-2120401005`                     |
 | **examine as three ints** | `x/3dw pprofits` | `-2120401005   -1060200502   ...` |
 
@@ -568,6 +584,7 @@ long long *pdeficits = &deficits[0];
 | **print as default**            | `p deficits`     | `{-8220802194093872013, ...}` |
 | print as unsigned               | `p/u deficits`   | `{10225941879615679603, ...}` |
 | **print as signed**             | `p/d deficits`   | `{-8220802194093872013, ...}` |
+| **print as deref array**        | `p *deficits@3`  | `{-8220802194093872013, ...}` |
 | examine as default              | `x deficits`     | `0x7fffffffe000: -822080...`  |
 | **examine as three long longs** | `x/3dg deficits` | `-8220802194093872013 ...`    |
 | examine ... in binary           | `x/3tg deficits` | `100011011... ...`            |
@@ -575,14 +592,15 @@ long long *pdeficits = &deficits[0];
 
 #### long long* (to an array)
 
-| Format                          | Command           | Output                     |
-|---------------------------------|-------------------|----------------------------|
-| show type                       | `ptype pdeficits` | `long long *`              |
-| print as default                | `p pdeficits`     | `0x7fffffffe010`           |
-| print deref as unsigned         | `p/u *pdeficits`  | `10225941879615679603`     |
-| print deref as signed           | `p/d *pdeficits`  | `-8220802194093872013`     |
-| examine as default              | `x pdeficits`     | `-8220802194093872013`     |
-| **examine as three long longs** | `x/3dg pdeficits` | `-8220802194093872013 ...` |
+| Format                          | Command           | Output                        |
+|---------------------------------|-------------------|-------------------------------|
+| show type                       | `ptype pdeficits` | `long long *`                 |
+| print as default                | `p pdeficits`     | `0x7fffffffe010`              |
+| print deref as unsigned         | `p/u *pdeficits`  | `10225941879615679603`        |
+| print deref as signed           | `p/d *pdeficits`  | `-8220802194093872013`        |
+| **print as deref array**        | `p *pdeficits@3`  | `{-8220802194093872013, ...}` |
+| examine as default              | `x pdeficits`     | `-8220802194093872013`        |
+| **examine as three long longs** | `x/3dg pdeficits` | `-8220802194093872013 ...`    |
 
 
 
@@ -601,52 +619,6 @@ long long *pdeficits = &deficits[0];
 float electron = 9.10e-31;
 float *pelectron = &electron;
 float particles[] = {electron, 1.67e-27};  // add proton
+ add proton
 float *pparticles = &particles[0];
 ```
-
-#### float
-
-| Format               | Command          | Output           |
-|----------------------|------------------|------------------|
-| show type            | `ptype electron` | `float`          |
-| **print as default** | `p electron`     | `9.10000018e-31` |
-| **print as float**   | `p/f electron`   | `9.10000018e-31` |
-| print as binary      | `p/t electron`   | `0`              |
-| print as hex         | `p/x electron`   | `0x0`            |
-| print as raw         | `p/r electron`   | `0x00000000`     |
-
-#### float* (to a single float)
-
-| Format                          | Command           | Output                         |
-|---------------------------------|-------------------|--------------------------------|
-| show type                       | `ptype pelectron` | `float *`                      |
-| print as default                | `p pelectron`     | `0x7fffffffdfef "\363\356..."` |
-| print deref as default          | `p *pelectron`    | `243 '\363'`                   |
-| **print deref as unsigned**     | `p/u *pelectron`  | `243`                          |
-| print deref as signed           | `p/d *pelectron`  | `-13`                          |
-| examine as default              | `x pelectron`     | `0x7fffffffdfef: 11110011`     |
-| **examine as single char/byte** | `x/1ub pelectron` | `243`                          |
-
-#### float[]
-
-| Format                     | Command           | Output                         |
-|----------------------------|-------------------|--------------------------------|
-| show type                  | `ptype electrons` | `float [3]`                    |
-| print as default           | `p electrons`     | `"\363q6"`                     |
-| **print as unsigned**      | `p/u electrons`   | `{243, 113, 54}`               |
-| print as signed            | `p/d electrons`   | `{-13, 113, 54}`               |
-| examine as default         | `x electrons`     | `0x7fffffffe019: 11110011`     |
-| **examine as three chars** | `x/3ub electrons` | `243     113     54`           |
-| examine ... in binary      | `x/3tb electrons` | `11110011  01110001  00110110` |
-| examine ... in hex         | `x/3xb electrons` | `0xf3  0x71  0x36`             |
-
-#### float* (to an array)
-
-| Format                     | Command            | Output                       |
-|----------------------------|--------------------|------------------------------|
-| show type                  | `ptype pelectrons` | `float *`                    |
-| print as default           | `p pelectrons`     | `0x7fffffffe019 "\363q6..."` |
-| print deref as unsigned    | `p/u *pelectrons`  | `243`                        |
-| print deref as signed      | `p/d *pelectrons`  | `-13`                        |
-| examine as default         | `x pelectrons`     | `0x7fffffffe019: -13`        |
-| **examine as three chars** | `x/3ub pelectrons` | `243     113     54`         |
