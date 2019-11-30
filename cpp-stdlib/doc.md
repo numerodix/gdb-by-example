@@ -1,16 +1,16 @@
 # C++ standard library
 
 
-* [String](#string)
+* [std::string](#std::string)
 
 
-## String
+## std::string
 
 ```
 std::string name{"Ramin Djawadi"};
 ```
 
-| Format                   | Command                                      | Output        |
-|--------------------------|----------------------------------------------|---------------|
-| show type                | `ptype name`                                 | std::string`` |
-| **print as deref array** | `p *name._M_local_buf@name._M_string_length` | 
+| Format                   | Command                                      | Output            |
+|--------------------------|----------------------------------------------|-------------------|
+| show type                | `ptype name`                                 | `std::string`     |
+| **print as deref array** | `p *name._M_local_buf@name._M_string_length` | `"Ramin Djawadi"` |
