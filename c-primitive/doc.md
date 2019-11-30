@@ -593,15 +593,15 @@ long long *pdeficits = &deficits[0];
 ### float
 
 - Size: 4 bytes / 32 bits
-- Min: -3.4e-38
+- Min: -3.4e38
 - Max: 3.4e38
 
 ```
-// mass of photon: 8.56e-38
-float photon = 8.56e-38;
-float *pphoton = &photon;
-// add electron and proton
-float particles[] = {photon, 9.10e-31, 1.67e-27};
+// mass of electron: 9.10e-31
+float electron = 9.10e-31;
+float *pelectron = &electron;
+// add proton
+float particles[] = {electron, 1.67e-27};
 float *pparticles = &particles[0];
 ```
 

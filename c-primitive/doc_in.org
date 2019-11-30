@@ -545,7 +545,7 @@
 ### float
 
 - Size: 4 bytes / 32 bits
-- Min: -3.4e-38
+- Min: -3.4e38
 - Max: 3.4e38
 
 ```
