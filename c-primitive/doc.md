@@ -79,7 +79,7 @@ char *pname = &name[0];
 
 ### wchar_t
 
-- Size: 2-4 bytes / 32-64 bits (depends on the platform)
+- Size: 2-4 bytes / 16-32 bits (depends on the platform)
 - Charset: UCS-2/UTF-16 (when 2 bytes), Unicode (when 4 bytes)
 
 ```
