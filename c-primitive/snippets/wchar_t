@@ -1,0 +1,4 @@
+wchar_t symbol = L'\xd55c';
+wchar_t *psymbol = &symbol;
+wchar_t japan[] = L"\x65e5\x672c";
+wchar_t *pjapan = &japan[0];

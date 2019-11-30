@@ -79,7 +79,7 @@ char *pname = &name[0];
 
 ### wchar_t
 
-- Size: 2-4 bytes / 32-64 bits
+- Size: 2-4 bytes / 32-64 bits (depends on the platform)
 - Charset: Unicode (when 4 bytes)
 
 ```
@@ -97,7 +97,7 @@ wchar_t *pjapan = &japan[0];
 | **print as default** | `p symbol`     | `54620 L'한'` |
 | print as number      | `p/u symbol`   | `54620`       |
 
-#### char* (to a single char)
+#### wchar_t* (to a single wchar_t)
 
 | Format                     | Command         | Output              |
 |----------------------------|-----------------|---------------------|
@@ -105,7 +105,7 @@ wchar_t *pjapan = &japan[0];
 | print as default           | `p psymbol`     | `L"한\xf0ffffff...` |
 | **print deref as default** | `p *psymbol`    | `54620 L'한'`       |
 
-#### char[] (as a string)
+#### wchar_t[] (as a string)
 
 | Format                         | Command       | Output              |
 |--------------------------------|---------------|---------------------|
@@ -115,7 +115,7 @@ wchar_t *pjapan = &japan[0];
 | print as number array          | `p/u japan`   | `{26085, 26412, 0}` |
 | **examine as chars with size** | `x/3uw japan` | `26085   26412   0` |
 
-#### char* (to a string)
+#### wchar_t* (to a string)
 
 | Format                         | Command        | Output              |
 |--------------------------------|----------------|---------------------|
