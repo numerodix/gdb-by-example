@@ -15,3 +15,4 @@ Why gdb by example, doesn't gdb just know how to display things in the way we wa
   * [Signed integers](c-primitive/doc.md#signed-integers)
     * [char](c-primitive/doc.md#char)
     * [short](c-primitive/doc.md#short)
+    * [int](c-primitive/doc.md#int)

@@ -11,6 +11,7 @@
 * [Signed integers](#signed-integers)
   * [char](#char)
   * [short](#short)
+  * [int](#int)
 
 
 ## Characters and strings
@@ -477,3 +478,66 @@ short *pbalances = &balances[0];
 | print deref as signed       | `p/d *pbalances`  | `-31500`                   |
 | examine as default          | `x pbalances`     | `-31500`                   |
 | **examine as three shorts** | `x/3xh pbalances` | `-31500   -29130   -15120` |
+
+
+
+### int
+
+- Size: 4 bytes / 32 bits
+- Min: -2,147,483,648
+- Max: 2,147,483,647
+
+```
+// VC funded company earnings: -2,120,401,005
+int profit = -2120401005;
+int *pprofit = &profit;
+int profits[] = {profit, profit / 2, profit / 6};
+int *pprofits = &profits[0];
+```
+
+#### int
+
+| Format               | Command        | Output          |
+|----------------------|----------------|-----------------|
+| show type            | `ptype profit` | `int`           |
+| **print as default** | `p profit`     | `-2120401005`   |
+| print as unsigned    | `p/u profit`   | `2174566291`    |
+| **print as signed**  | `p/d profit`   | `-2120401005`   |
+| display as binary    | `p/t profit`   | `1000000110...` |
+| display as hex       | `p/x profit`   | 0x819d3f93``    |
+
+#### int* (to a single int)
+
+| Format                     | Command         | Output                         |
+|----------------------------|-----------------|--------------------------------|
+| show type                  | `ptype pprofit` | `int *`                        |
+| print as default           | `p pprofit`     | `0x7fffffffdf14`               |
+| **print deref as default** | `p *pprofit`    | `-2120401005`                  |
+| print deref as unsigned    | `p/u *pprofit`  | `2174566291`                   |
+| **print deref as signed**  | `p/d *pprofit`  | `-2120401005`                  |
+| **examine as default**     | `x pprofit`     | `0x7fffffffdf14: -2120401005 ` |
+| **examine as single int**  | `x/1dw pprofit` | `0x7fffffffdf14: -2120401005`  |
+
+#### int[]
+
+| Format                    | Command         | Output                            |
+|---------------------------|-----------------|-----------------------------------|
+| show type                 | `ptype profits` | `int [3]`                         |
+| **print as default**      | `p profits`     | `{-2120401005, -1060200502, ...}` |
+| print as unsigned         | `p/u profits`   | `{2174566291, 3234766794, ...}`   |
+| **print as signed**       | `p/d profits`   | `{-2120401005, -1060200502, ...}` |
+| examine as default        | `x profits`     | `0x7fffffffdfd4: -2120401005 `    |
+| **examine as three ints** | `x/3dw profits` | `-2120401005   -1060200502 ...`   |
+| examine ... in binary     | `x/3tw profits` | `1000000110... ...`               |
+| examine ... in hex        | `x/3xw profits` | `0x819d3f93   0xc0ce9fca   ...`   |
+
+#### int* (to an array)
+
+| Format                    | Command          | Output                            |
+|---------------------------|------------------|-----------------------------------|
+| show type                 | `ptype pprofits` | `int *`                           |
+| print as default          | `p pprofits`     | `0x7fffffffdfd4`                  |
+| print deref as unsigned   | `p/u *pprofits`  | `2174566291`                      |
+| print deref as signed     | `p/d *pprofits`  | `-2120401005`                     |
+| examine as default        | `x pprofits`     | `-2120401005`                     |
+| **examine as three ints** | `x/3dw pprofits` | `-2120401005   -1060200502   ...` |
