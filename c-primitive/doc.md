@@ -9,7 +9,7 @@
   * [unsigned int](#unsigned-int)
   * [unsigned long long](#unsigned-long-long)
 * [Signed integers](#signed-integers)
-  * [signed char](#signed-char)
+  * [char](#char)
   * [short](#short)
 
 
@@ -354,7 +354,7 @@ unsigned long long *pdeficits = &deficits[0];
 
 
 
-### signed char
+### char
 
 - Size: 1 byte / 8 bits
 - Min: -128

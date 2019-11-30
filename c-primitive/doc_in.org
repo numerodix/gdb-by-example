@@ -310,7 +310,7 @@ XXX
 
 
 
-### signed char
+### char
 
 - Size: 1 byte / 8 bits
 - Min: -128
