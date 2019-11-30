@@ -12,6 +12,7 @@
   * [char](#char)
   * [short](#short)
   * [int](#int)
+  * [long long](#long-long)
 
 
 ## Characters and strings
@@ -325,30 +326,6 @@ unsigned long long *puniverses = &universes[0];
 | **examine as three long longs** | `x/3ug puniverses` | `10376293541461622784 ...` |
 
 
-XXX
-```
-// a planet's surface temperature: -121 C
-char surface = -121;
-char *psurface = &surface;
-char surfaces[] = {-121, -97, -56};
-char *psurfaces = &surfaces[0];
-// credit card debt: 31,500 
-short balance = -31500;
-short *pbalance = &balance;
-short balances[] = {-31500, -29130, -15120};
-short *pbalances = &balances[0];
-// VC funded company earnings: -2,120,401,005
-int profit = -2120401005;
-int *pprofit = &profit;
-int profits[] = {profit, profit / 2, profit / 6};
-int *pprofits = &profits[0];
-// future world economy deficit: 8,220,802,194,093,872,013
-unsigned long long deficit = -8220802194093872013LL;
-unsigned long long *pdeficit = &deficit;
-unsigned long long deficits[] = {deficit, deficit / 2, deficit / 6};
-unsigned long long *pdeficits = &deficits[0];
-```
-
 
 
 ## Signed integers
@@ -541,3 +518,66 @@ int *pprofits = &profits[0];
 | print deref as signed     | `p/d *pprofits`  | `-2120401005`                     |
 | examine as default        | `x pprofits`     | `-2120401005`                     |
 | **examine as three ints** | `x/3dw pprofits` | `-2120401005   -1060200502   ...` |
+
+
+
+### long long
+
+- Size: 8 bytes / 64 bits
+- Min: -9,223,372,036,854,775,808
+- Max: 9,223,372,036,854,775,807
+
+```
+// future world economy deficit: 8,220,802,194,093,872,013
+long long deficit = -8220802194093872013LL;
+long long *pdeficit = &deficit;
+long long deficits[] = {deficit, deficit / 2, deficit / 6};
+long long *pdeficits = &deficits[0];
+```
+
+#### long long
+
+| Format               | Command         | Output                 |
+|----------------------|-----------------|------------------------|
+| show type            | `ptype deficit` | `long long`            |
+| **print as default** | `p deficit`     | `-8220802194093872013` |
+| print as unsigned    | `p/u deficit`   | `10225941879615679603` |
+| **print as signed**  | `p/d deficit`   | `-8220802194093872013` |
+| display as binary    | `p/t deficit`   | `1000110111...`        |
+| display as hex       | `p/x deficit`   | `0x8de9d7f5cc486c73`   |
+
+#### long long* (to a single long long)
+
+| Format                          | Command          | Output                         |
+|---------------------------------|------------------|--------------------------------|
+| show type                       | `ptype pdeficit` | `long long *`                  |
+| print as default                | `p pdeficit`     | `0x7fffffffdf30`               |
+| **print deref as default**      | `p *pdeficit`    | `-8220802194093872013`         |
+| print deref as unsigned         | `p/u *pdeficit`  | `10225941879615679603`         |
+| **print deref as signed**       | `p/d *pdeficit`  | `-8220802194093872013`         |
+| examine as default              | `x pdeficit`     | `0x7fffffffdf88: -82208021...` |
+| **examine as single long long** | `x/1dg pdeficit` | `-8220802194093872013`         |
+
+#### long long[]
+
+| Format                          | Command          | Output                        |
+|---------------------------------|------------------|-------------------------------|
+| show type                       | `ptype deficits` | `long long [3]`               |
+| **print as default**            | `p deficits`     | `{-8220802194093872013, ...}` |
+| print as unsigned               | `p/u deficits`   | `{10225941879615679603, ...}` |
+| **print as signed**             | `p/d deficits`   | `{-8220802194093872013, ...}` |
+| examine as default              | `x deficits`     | `0x7fffffffe000: -822080...`  |
+| **examine as three long longs** | `x/3dg deficits` | `-8220802194093872013 ...`    |
+| examine ... in binary           | `x/3tg deficits` | `100011011... ...`            |
+| examine ... in hex              | `x/3xg deficits` | `0x8de9d7f5cc486c73 ...`      |
+
+#### long long* (to an array)
+
+| Format                          | Command           | Output                     |
+|---------------------------------|-------------------|----------------------------|
+| show type                       | `ptype pdeficits` | `long long *`              |
+| print as default                | `p pdeficits`     | `0x7fffffffe010`           |
+| print deref as unsigned         | `p/u *pdeficits`  | `10225941879615679603`     |
+| print deref as signed           | `p/d *pdeficits`  | `-8220802194093872013`     |
+| examine as default              | `x pdeficits`     | `-8220802194093872013`     |
+| **examine as three long longs** | `x/3dg pdeficits` | `-8220802194093872013 ...` |

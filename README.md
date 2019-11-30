@@ -16,3 +16,4 @@ Why gdb by example, doesn't gdb just know how to display things in the way we wa
     * [char](c-primitive/doc.md#char)
     * [short](c-primitive/doc.md#short)
     * [int](c-primitive/doc.md#int)
+    * [long long](c-primitive/doc.md#long-long)
