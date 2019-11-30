@@ -13,8 +13,6 @@
   * [short](#short)
   * [int](#int)
   * [long long](#long-long)
-* [Floating point numbers (wip)](#floating-point-numbers-(wip))
-  * [float](#float)
 
 
 ## Characters and strings
@@ -601,24 +599,3 @@ long long *pdeficits = &deficits[0];
 | **print as deref array**        | `p *pdeficits@3`  | `{-8220802194093872013, ...}` |
 | examine as default              | `x pdeficits`     | `-8220802194093872013`        |
 | **examine as three long longs** | `x/3dg pdeficits` | `-8220802194093872013 ...`    |
-
-
-
-## Floating point numbers (wip)
-
-
-
-### float
-
-- Size: 4 bytes / 32 bits
-- Min: -3.4e38
-- Max: 3.4e38
-
-```
-// mass of electron: 9.10e-31
-float electron = 9.10e-31;
-float *pelectron = &electron;
-float particles[] = {electron, 1.67e-27};  // add proton
- add proton
-float *pparticles = &particles[0];
-```

@@ -60,12 +60,5 @@ int main(int argc, char **argv) {
     long long *pdeficits = &deficits[0];
 
 
-    // mass of electron: 9.10e-31
-    float electron = 9.10e-31;
-    float *pelectron = &electron;
-    float particles[] = {electron, 1.67e-27};  // add proton
-     add proton
-    float *pparticles = &particles[0];
-
     segfault
 }

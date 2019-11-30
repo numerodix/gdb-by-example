@@ -553,19 +553,3 @@
 | **print as deref array**        | `p *pdeficits@3`  | `{-8220802194093872013, ...}` |
 | examine as default              | `x pdeficits`     | `-8220802194093872013`        |
 | **examine as three long longs** | `x/3dg pdeficits` | `-8220802194093872013 ...`    |
-
-
-
-## Floating point numbers (wip)
-
-
-
-### float
-
-- Size: 4 bytes / 32 bits
-- Min: -3.4e38
-- Max: 3.4e38
-
-```
-{{<include:snippets/float>}}
-```
