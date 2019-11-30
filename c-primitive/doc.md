@@ -13,7 +13,7 @@
   * [short](#short)
   * [int](#int)
   * [long long](#long-long)
-* [Floating point numbers](#floating-point-numbers)
+* [Floating point numbers (wip)](#floating-point-numbers-(wip))
   * [float](#float)
 
 
@@ -99,8 +99,8 @@ unsigned char *pvillages = &villages[0];
 | print as default      | `p village`     | `243 '\363'`    |
 | **print as unsigned** | `p/u village`   | `243`           |
 | print as signed       | `p/d village`   | `-13`           |
-| display as binary     | `p/t village`   | `11110011`      |
-| display as hex        | `p/x village`   | `0xf3`          |
+| print as binary       | `p/t village`   | `11110011`      |
+| print as hex          | `p/x village`   | `0xf3`          |
 
 #### unsigned char* (to a single char)
 
@@ -162,8 +162,8 @@ unsigned short *ptowns = &towns[0];
 | **print as default**  | `p town`     | `61000`            |
 | **print as unsigned** | `p/u town`   | `61000`            |
 | print as signed       | `p/d town`   | `-4536`            |
-| display as binary     | `p/t town`   | `1110111001001000` |
-| display as hex        | `p/x town`   | `0xee48`           |
+| print as binary       | `p/t town`   | `1110111001001000` |
+| print as hex          | `p/x town`   | `0xee48`           |
 
 #### unsigned short* (to a single short)
 
@@ -225,8 +225,8 @@ unsigned int *pplanets = &planets[0];
 | **print as default**  | `p planet`     | `4043309055`     |
 | **print as unsigned** | `p/u planet`   | `4043309055`     |
 | print as signed       | `p/d planet`   | `-251658241`     |
-| display as binary     | `p/t planet`   | `11110000111...` |
-| display as hex        | `p/x planet`   | `0xf0ffffff`     |
+| print as binary     | `p/t planet`   | `11110000111...` |
+| print as hex        | `p/x planet`   | `0xf0ffffff`     |
 
 #### unsigned int* (to a single int)
 
@@ -288,20 +288,20 @@ unsigned long long *puniverses = &universes[0];
 | **print as default**  | `p universe`     | `10376293541461622784`   |
 | **print as unsigned** | `p/u universe`   | `10376293541461622784`   |
 | print as signed       | `p/d universe`   | `-8070450532247928832`   |
-| display as binary     | `p/t universe`   | `1001000000000000000...` |
-| display as hex        | `p/x universe`   | `0x9000000000000000`     |
+| print as binary       | `p/t universe`   | `1001000000000000000...` |
+| print as hex          | `p/x universe`   | `0x9000000000000000`     |
 
 #### unsigned long long* (to a single long long)
 
-| Format                          | Command           | Output                       |
-|---------------------------------|-------------------|------------------------------|
-| show type                       | `ptype puniverse` | `unsigned long long *`       |
-| print as default                | `p puniverse`     | `0x7fffffffdf88`             |
-| **print deref as default**      | `p *puniverse`    | `10376293541461622784`       |
-| **print deref as unsigned**     | `p/u *puniverse`  | `10376293541461622784`       |
-| print deref as signed           | `p/d *puniverse`  | `-8070450532247928832`       |
-| examine as default              | `x puniverse`     | `0x7fffffffdf88: 10376...`
-| **examine as single long long** | `x/1ug puniverse` | `10376293541461622784`       |
+| Format                          | Command           | Output                     |
+|---------------------------------|-------------------|----------------------------|
+| show type                       | `ptype puniverse` | `unsigned long long *`     |
+| print as default                | `p puniverse`     | `0x7fffffffdf88`           |
+| **print deref as default**      | `p *puniverse`    | `10376293541461622784`     |
+| **print deref as unsigned**     | `p/u *puniverse`  | `10376293541461622784`     |
+| print deref as signed           | `p/d *puniverse`  | `-8070450532247928832`     |
+| examine as default              | `x puniverse`     | `0x7fffffffdf88: 10376...` |
+| **examine as single long long** | `x/1ug puniverse` | `10376293541461622784`     |
 
 #### unsigned long long[]
 
@@ -356,8 +356,8 @@ char *psurfaces = &surfaces[0];
 | print as default    | `p surface`     | `-121 '\207'` |
 | print as unsigned   | `p/u surface`   | `135`         |
 | **print as signed** | `p/d surface`   | `-121`        |
-| display as binary   | `p/t surface`   | `10000111`    |
-| display as hex      | `p/x surface`   | `0x87`        |
+| print as binary     | `p/t surface`   | `10000111`    |
+| print as hex        | `p/x surface`   | `0x87`        |
 
 #### char* (to a single char)
 
@@ -419,8 +419,8 @@ short *pbalances = &balances[0];
 | **print as default** | `p balance`     | `-31500`           |
 | print as unsigned    | `p/u balance`   | `34036`            |
 | **print as signed**  | `p/d balance`   | `-31500`           |
-| display as binary    | `p/t balance`   | `1000010011110100` |
-| display as hex       | `p/x balance`   | `0x84f4`           |
+| print as binary      | `p/t balance`   | `1000010011110100` |
+| print as hex         | `p/x balance`   | `0x84f4`           |
 
 #### short* (to a single short)
 
@@ -482,8 +482,8 @@ int *pprofits = &profits[0];
 | **print as default** | `p profit`     | `-2120401005`   |
 | print as unsigned    | `p/u profit`   | `2174566291`    |
 | **print as signed**  | `p/d profit`   | `-2120401005`   |
-| display as binary    | `p/t profit`   | `1000000110...` |
-| display as hex       | `p/x profit`   | `0x819d3f93`    |
+| print as binary      | `p/t profit`   | `1000000110...` |
+| print as hex         | `p/x profit`   | `0x819d3f93`    |
 
 #### int* (to a single int)
 
@@ -545,8 +545,8 @@ long long *pdeficits = &deficits[0];
 | **print as default** | `p deficit`     | `-8220802194093872013` |
 | print as unsigned    | `p/u deficit`   | `10225941879615679603` |
 | **print as signed**  | `p/d deficit`   | `-8220802194093872013` |
-| display as binary    | `p/t deficit`   | `1000110111...`        |
-| display as hex       | `p/x deficit`   | `0x8de9d7f5cc486c73`   |
+| print as binary      | `p/t deficit`   | `1000110111...`        |
+| print as hex         | `p/x deficit`   | `0x8de9d7f5cc486c73`   |
 
 #### long long* (to a single long long)
 
@@ -586,7 +586,7 @@ long long *pdeficits = &deficits[0];
 
 
 
-## Floating point numbers
+## Floating point numbers (wip)
 
 
 
@@ -600,54 +600,53 @@ long long *pdeficits = &deficits[0];
 // mass of electron: 9.10e-31
 float electron = 9.10e-31;
 float *pelectron = &electron;
-// add proton
-float particles[] = {electron, 1.67e-27};
+float particles[] = {electron, 1.67e-27};  // add proton
 float *pparticles = &particles[0];
 ```
 
-#### unsigned char
+#### float
 
-| Format                | Command         | Output          |
-|-----------------------|-----------------|-----------------|
-| show type             | `ptype village` | `unsigned char` |
-| print as default      | `p village`     | `243 '\363'`    |
-| **print as unsigned** | `p/u village`   | `243`           |
-| print as signed       | `p/d village`   | `-13`           |
-| display as binary     | `p/t village`   | `11110011`      |
-| display as hex        | `p/x village`   | `0xf3`          |
+| Format               | Command          | Output           |
+|----------------------|------------------|------------------|
+| show type            | `ptype electron` | `float`          |
+| **print as default** | `p electron`     | `9.10000018e-31` |
+| **print as float**   | `p/f electron`   | `9.10000018e-31` |
+| print as binary      | `p/t electron`   | `0`              |
+| print as hex         | `p/x electron`   | `0x0`            |
+| print as raw         | `p/r electron`   | `0x00000000`     |
 
-#### unsigned char* (to a single char)
+#### float* (to a single float)
 
-| Format                          | Command          | Output                         |
-|---------------------------------|------------------|--------------------------------|
-| show type                       | `ptype pvillage` | `unsigned char *`              |
-| print as default                | `p pvillage`     | `0x7fffffffdfef "\363\356..."` |
-| print deref as default          | `p *pvillage`    | `243 '\363'`                   |
-| **print deref as unsigned**     | `p/u *pvillage`  | `243`                          |
-| print deref as signed           | `p/d *pvillage`  | `-13`                          |
-| examine as default              | `x pvillage`     | `0x7fffffffdfef: 11110011`     |
-| **examine as single char/byte** | `x/1ub pvillage` | `243`                          |
+| Format                          | Command           | Output                         |
+|---------------------------------|-------------------|--------------------------------|
+| show type                       | `ptype pelectron` | `float *`                      |
+| print as default                | `p pelectron`     | `0x7fffffffdfef "\363\356..."` |
+| print deref as default          | `p *pelectron`    | `243 '\363'`                   |
+| **print deref as unsigned**     | `p/u *pelectron`  | `243`                          |
+| print deref as signed           | `p/d *pelectron`  | `-13`                          |
+| examine as default              | `x pelectron`     | `0x7fffffffdfef: 11110011`     |
+| **examine as single char/byte** | `x/1ub pelectron` | `243`                          |
 
-#### unsigned char[]
+#### float[]
 
-| Format                     | Command          | Output                         |
-|----------------------------|------------------|--------------------------------|
-| show type                  | `ptype villages` | `unsigned char [3]`            |
-| print as default           | `p villages`     | `"\363q6"`                     |
-| **print as unsigned**      | `p/u villages`   | `{243, 113, 54}`               |
-| print as signed            | `p/d villages`   | `{-13, 113, 54}`               |
-| examine as default         | `x villages`     | `0x7fffffffe019: 11110011`     |
-| **examine as three chars** | `x/3ub villages` | `243     113     54`           |
-| examine ... in binary      | `x/3tb villages` | `11110011  01110001  00110110` |
-| examine ... in hex         | `x/3xb villages` | `0xf3  0x71  0x36`             |
+| Format                     | Command           | Output                         |
+|----------------------------|-------------------|--------------------------------|
+| show type                  | `ptype electrons` | `float [3]`                    |
+| print as default           | `p electrons`     | `"\363q6"`                     |
+| **print as unsigned**      | `p/u electrons`   | `{243, 113, 54}`               |
+| print as signed            | `p/d electrons`   | `{-13, 113, 54}`               |
+| examine as default         | `x electrons`     | `0x7fffffffe019: 11110011`     |
+| **examine as three chars** | `x/3ub electrons` | `243     113     54`           |
+| examine ... in binary      | `x/3tb electrons` | `11110011  01110001  00110110` |
+| examine ... in hex         | `x/3xb electrons` | `0xf3  0x71  0x36`             |
 
-#### unsigned char* (to an array)
+#### float* (to an array)
 
-| Format                     | Command           | Output                       |
-|----------------------------|-------------------|------------------------------|
-| show type                  | `ptype pvillages` | `unsigned char *`            |
-| print as default           | `p pvillages`     | `0x7fffffffe019 "\363q6..."` |
-| print deref as unsigned    | `p/u *pvillages`  | `243`                        |
-| print deref as signed      | `p/d *pvillages`  | `-13`                        |
-| examine as default         | `x pvillages`     | `0x7fffffffe019: -13`        |
-| **examine as three chars** | `x/3ub pvillages` | `243     113     54`         |
+| Format                     | Command            | Output                       |
+|----------------------------|--------------------|------------------------------|
+| show type                  | `ptype pelectrons` | `float *`                    |
+| print as default           | `p pelectrons`     | `0x7fffffffe019 "\363q6..."` |
+| print deref as unsigned    | `p/u *pelectrons`  | `243`                        |
+| print deref as signed      | `p/d *pelectrons`  | `-13`                        |
+| examine as default         | `x pelectrons`     | `0x7fffffffe019: -13`        |
+| **examine as three chars** | `x/3ub pelectrons` | `243     113     54`         |
