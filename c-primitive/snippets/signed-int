@@ -1,5 +1,5 @@
-    // VC funded company earnings: -2,120,401,005
-    int profit = -2120401005;
-    int *pprofit = &profit;
-    int profits[] = {profit, profit / 2, profit / 6};
-    int *pprofits = &profits[0];
+// VC funded company earnings: -2,120,401,005
+int profit = -2120401005;
+int *pprofit = &profit;
+int profits[] = {profit, profit / 2, profit / 6};
+int *pprofits = &profits[0];

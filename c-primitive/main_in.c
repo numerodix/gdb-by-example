@@ -4,25 +4,25 @@
 
 
 int main(int argc, char **argv) {
-// {{<include:snippets/chars>}}
+// {{<include:snippets/chars,indent:4>}}
  
 
-// {{<include:snippets/unsigned-char>}}
+// {{<include:snippets/unsigned-char,indent:4>}}
 
-// {{<include:snippets/unsigned-short>}}
+// {{<include:snippets/unsigned-short,indent:4>}}
 
-// {{<include:snippets/unsigned-int>}}
+// {{<include:snippets/unsigned-int,indent:4>}}
 
-// {{<include:snippets/unsigned-long-long>}}
+// {{<include:snippets/unsigned-long-long,indent:4>}}
 
 
-// {{<include:snippets/signed-char>}}
+// {{<include:snippets/signed-char,indent:4>}}
 
-// {{<include:snippets/signed-short>}}
+// {{<include:snippets/signed-short,indent:4>}}
 
-// {{<include:snippets/signed-int>}}
+// {{<include:snippets/signed-int,indent:4>}}
 
-// {{<include:snippets/signed-long-long>}}
+// {{<include:snippets/signed-long-long,indent:4>}}
 
     segfault
 }

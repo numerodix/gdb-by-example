@@ -1,5 +1,5 @@
-    // credit card debt: 31,500 
-    short balance = -31500;
-    short *pbalance = &balance;
-    short balances[] = {-31500, -29130, -15120};
-    short *pbalances = &balances[0];
+// credit card debt: 31,500 
+short balance = -31500;
+short *pbalance = &balance;
+short balances[] = {-31500, -29130, -15120};
+short *pbalances = &balances[0];

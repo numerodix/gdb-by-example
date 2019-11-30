@@ -1,4 +1,4 @@
-    char initial = 'H';
-    char *pinitial = &initial;
-    char name[] = "Hans Zimmer";
-    char *pname = &name[0];
+char initial = 'H';
+char *pinitial = &initial;
+char name[] = "Hans Zimmer";
+char *pname = &name[0];

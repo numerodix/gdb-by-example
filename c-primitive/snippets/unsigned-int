@@ -1,5 +1,5 @@
-    // planet population: 4,043,309,055
-    unsigned int planet = 4043309055;
-    unsigned int *pplanet = &planet;
-    unsigned int planets[] = {planet, planet / 2, planet / 6};
-    unsigned int *pplanets = &planets[0];
+// planet population: 4,043,309,055
+unsigned int planet = 4043309055;
+unsigned int *pplanet = &planet;
+unsigned int planets[] = {planet, planet / 2, planet / 6};
+unsigned int *pplanets = &planets[0];

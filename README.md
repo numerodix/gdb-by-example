@@ -12,3 +12,5 @@ Why gdb by example, doesn't gdb just know how to display things in the way we wa
     * [unsigned short](c-primitive/doc.md#unsigned-short)
     * [unsigned int](c-primitive/doc.md#unsigned-int)
     * [unsigned long long](c-primitive/doc.md#unsigned-long-long)
+  * [Signed integers](c-primitive/doc.md#signed-integers)
+    * [signed char](c-primitive/doc.md#signed-char)

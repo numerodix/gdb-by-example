@@ -1,5 +1,5 @@
-    // future world economy deficit: 8,220,802,194,093,872,013
-    unsigned long long deficit = -8220802194093872013LL;
-    unsigned long long *pdeficit = &deficit;
-    unsigned long long deficits[] = {deficit, deficit / 2, deficit / 6};
-    unsigned long long *pdeficits = &deficits[0];
+// future world economy deficit: 8,220,802,194,093,872,013
+unsigned long long deficit = -8220802194093872013LL;
+unsigned long long *pdeficit = &deficit;
+unsigned long long deficits[] = {deficit, deficit / 2, deficit / 6};
+unsigned long long *pdeficits = &deficits[0];

@@ -99,7 +99,7 @@ def process(infile):
 
         print("  - Including file: %s" % filepath)
         with open(filepath) as f:
-            included_content = f.read()
+            included_content = f.read().rstrip()
 
         included_content = indent_block(indent_chars, included_content)
         content = content[:match.start()] + included_content + content[match.end():]

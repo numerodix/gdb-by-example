@@ -8,6 +8,8 @@
   * [unsigned short](#unsigned-short)
   * [unsigned int](#unsigned-int)
   * [unsigned long long](#unsigned-long-long)
+* [Signed integers](#signed-integers)
+  * [signed char](#signed-char)
 
 
 ## Characters and strings
@@ -320,6 +322,8 @@ unsigned long long *puniverses = &universes[0];
 | examine as default              | `x puniverses`     | `10376293541461622784`     |
 | **examine as three long longs** | `x/3ug puniverses` | `10376293541461622784 ...` |
 
+
+XXX
 ```
 // a planet's surface temperature: -121 C
 char surface = -121;
@@ -342,3 +346,70 @@ unsigned long long *pdeficit = &deficit;
 unsigned long long deficits[] = {deficit, deficit / 2, deficit / 6};
 unsigned long long *pdeficits = &deficits[0];
 ```
+
+
+
+## Signed integers
+
+
+
+### signed char
+
+- Size: 1 byte / 8 bits
+- Min: -128
+- Max: 127
+
+```
+// a planet's surface temperature: -121 C
+char surface = -121;
+char *psurface = &surface;
+char surfaces[] = {-121, -97, -56};
+char *psurfaces = &surfaces[0];
+```
+
+#### char
+
+| Format              | Command         | Output        |
+|---------------------|-----------------|---------------|
+| show type           | `ptype surface` | `char`        |
+| print as default    | `p surface`     | `-121 '\207'` |
+| print as unsigned   | `p/u surface`   | `135`         |
+| **print as signed** | `p/d surface`   | `-121`        |
+| display as binary   | `p/t surface`   | `10000111`    |
+| display as hex      | `p/x surface`   | `0x87`        |
+
+#### char* (to a single char)
+
+| Format                          | Command          | Output                       |
+|---------------------------------|------------------|------------------------------|
+| show type                       | `ptype psurface` | `char *`                     |
+| print as default                | `p psurface`     | `"\207H\356\364\204...`      |
+| print deref as default          | `p *psurface`    | `-121 '\207'`                |
+| print deref as unsigned         | `p/u *psurface`  | `135`                        |
+| **print deref as signed**       | `p/d *psurface`  | `-121`                       |
+| examine as default              | `x psurface`     | `0x7fffffffdf0b: -185710457` |
+| **examine as single char/byte** | `x/1db psurface` | `-121`                       |
+
+#### char[]
+
+| Format                     | Command          | Output                           |
+|----------------------------|------------------|----------------------------------|
+| show type                  | `ptype surfaces` | `char [3]`                       |
+| print as default           | `p surfaces`     | `"\207\237...`                   |
+| print as unsigned          | `p/u surfaces`   | `{135, 159, 200}`                |
+| **print as signed**        | `p/d surfaces`   | `{-121, -97, -56}`               |
+| examine as default         | `x surfaces`     | `0x7fffffffe029: -121`           |
+| **examine as three chars** | `x/3db surfaces` | `-121  -97  -56`                 |
+| examine ... in binary      | `x/3tb surfaces` | `10000111   10011111   11001000` |
+| examine ... in hex         | `x/3xb surfaces` | `0x87  0x9f  0xc8`               |
+
+#### char* (to an array)
+
+| Format                     | Command           | Output                        |
+|----------------------------|-------------------|-------------------------------|
+| show type                  | `ptype psurfaces` | `char *`                      |
+| print as default           | `p psurfaces`     | `0x7fffffffe029 "\207\237...` |
+| print deref as unsigned    | `p/u *psurfaces`  | `135`                         |
+| **print deref as signed**  | `p/d *psurfaces`  | `-121`                        |
+| **examine as default**     | `x psurfaces`     | `0x7fffffffe029: -121`        |
+| **examine as three chars** | `x/3db psurfaces` | `-121   -97   -56`            |

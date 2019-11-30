@@ -1,5 +1,5 @@
-    // a planet's surface temperature: -121 C
-    char surface = -121;
-    char *psurface = &surface;
-    char surfaces[] = {-121, -97, -56};
-    char *psurfaces = &surfaces[0];
+// a planet's surface temperature: -121 C
+char surface = -121;
+char *psurface = &surface;
+char surfaces[] = {-121, -97, -56};
+char *psurfaces = &surfaces[0];
