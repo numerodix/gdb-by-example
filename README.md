@@ -25,7 +25,7 @@ Why gdb by example, doesn't gdb just know how to display things in the way we wa
 ## C++
 
 * [C++ standard library](cpp-stdlib/doc.md#c++-standard-library)
-  * [std::string](cpp-stdlib/doc.md#std::string)
+  * [string](cpp-stdlib/doc.md#string)
 
 ## Tools used
 

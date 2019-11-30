@@ -1,10 +1,10 @@
 # C++ standard library
 
 
-* [std::string](#std::string)
+* [string](#string)
 
 
-## std::string
+## string
 
 ```
 std::string name{"Ramin Djawadi"};

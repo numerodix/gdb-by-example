@@ -4,7 +4,7 @@
 {{<toc,levels:2-3,source:.>}}
 
 
-## std::string
+## string
 
 ```
 {{<include:snippets/string>}}
