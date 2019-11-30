@@ -447,7 +447,7 @@ XXX
 | print as unsigned    | `p/u profit`   | `2174566291`    |
 | **print as signed**  | `p/d profit`   | `-2120401005`   |
 | display as binary    | `p/t profit`   | `1000000110...` |
-| display as hex       | `p/x profit`   | 0x819d3f93``    |
+| display as hex       | `p/x profit`   | `0x819d3f93`    |
 
 #### int* (to a single int)
 
