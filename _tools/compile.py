@@ -11,6 +11,8 @@ pat_include = 'include[:](?P<filepath>.*?)'
 pat_indent = ',indent[:](?P<indent>[0-9-]+)'
 pat_include_options = '(' + pat_indent + ')*'
 
+# {{<toc,levels:2-3,source=.>}}
+# {{<toc,levels:2-3,source=path/to/file>}}
 pat_toc = 'toc'
 pat_levels = ',levels[:](?P<level_from>[0-9]+)[-](?P<level_to>[0-9]+)'
 pat_source = ',source:(?P<source>([.]|.*?))'
