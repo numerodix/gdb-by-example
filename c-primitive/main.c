@@ -1,7 +1,6 @@
-#include <signal.h>
 #include <wchar.h>
 
-#define segfault raise(SIGSEGV);
+#include <segfault.h>
 
 
 int main(int argc, char **argv) {

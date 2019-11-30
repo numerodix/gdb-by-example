@@ -1,5 +1,5 @@
 all:
-	cc -g3 -Werror main.c -o main
+	cc -g3 -Werror -I ../common main.c -o main
 
 	ulimit -c unlimited
 	gdb \
