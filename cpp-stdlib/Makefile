@@ -1,5 +1,5 @@
 all:
-	g++ -g3 -Werror -I ../common main.cpp -o main
+	c++ -g3 -Werror -I ../common main.cpp -o main
 
 	ulimit -c unlimited
 	gdb \
