@@ -6,8 +6,8 @@
 
 ## QString
 
-* Composed of `QChar` which are 16bit.
-* Charset: UTF-16.
+* Composed of `QChar` which are 16bit
+* Charset: UTF-16
 * Underlying storage type: `QArrayData`
 
 ```
