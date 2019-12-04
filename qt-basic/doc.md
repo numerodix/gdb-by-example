@@ -11,6 +11,7 @@
 * Underlying storage type: `QArrayData`
 
 ```
+QChar initial('H');
 QString name("Harry Gregson-Williams");
 ```
 
@@ -39,6 +40,10 @@ $3 = 22
 # print the allocated size of the string
 (gdb) p/r (*name.d).alloc
 $4 = 23
+
+# print the offset of the string data
+(gdb) p/r (*name.d).offset
+$5 = 24
 ```
 
 Printing the string data is a bit more complicated. It is located at an offset
