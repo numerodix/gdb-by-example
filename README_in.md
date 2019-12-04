@@ -10,7 +10,7 @@ Why gdb by example, doesn't gdb just know how to display things in the way we wa
 
 {{<toc,levels:1-3,source:cpp-stdlib/doc.md>}}
 
-## C++ Libraries
+## Qt
 
 {{<toc,levels:1-3,source:qt-basic/doc.md>}}
 
