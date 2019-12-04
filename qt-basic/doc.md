@@ -11,7 +11,7 @@
 * Underlying storage type: `QArrayData`
 
 ```
-QString name("Harry Gregson Williams");
+QString name("Harry Gregson-Williams");
 ```
 
 ```
@@ -47,7 +47,7 @@ from the start of the data object.
 ```
 (gdb) x/22uh ((void*) (name.d)) + (*name.d).offset
 0x55555576ed08: 72      97      114     114     121     32      71      114
-0x55555576ed18: 101     103     115     111     110     32      87      105
+0x55555576ed18: 101     103     115     111     110     45      87      105
 0x55555576ed28: 108     108     105     97      109     115
 ```
 

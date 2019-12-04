@@ -2,6 +2,7 @@
 
 set -e
 
+export PATH=/usr/lib/qt5/bin:$PATH
 qmake
 make
 

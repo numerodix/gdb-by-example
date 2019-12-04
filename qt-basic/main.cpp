@@ -4,7 +4,7 @@
 
 
 int main(int argc, char** argv) {
-    QString name("Harry Gregson Williams");
+    QString name("Harry Gregson-Williams");
 
     segfault;
 }
