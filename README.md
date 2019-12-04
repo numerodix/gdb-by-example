@@ -29,7 +29,7 @@ Why gdb by example, doesn't gdb just know how to display things in the way we wa
 
 ## C++ Libraries
 
-* [QT basic types](qt-basic/doc.md#qt-basic-types)
+* [Qt basic types](qt-basic/doc.md#qt-basic-types)
   * [QString](qt-basic/doc.md#qstring)
 
 ## Tools used

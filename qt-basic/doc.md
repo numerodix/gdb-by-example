@@ -1,4 +1,4 @@
-# QT basic types
+# Qt basic types
 
 
 * [QString](#qstring)
@@ -7,6 +7,8 @@
 ## QString
 
 * Composed of `QChar` which are 16bit.
+* Charset: UTF-16.
+* Underlying storage type: `QArrayData`
 
 ```
 QString name("Harry Gregson Williams");
