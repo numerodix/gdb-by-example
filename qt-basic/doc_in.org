@@ -6,6 +6,8 @@
 
 ## QString
 
+* Composed of `QChar` which are 16bit.
+
 ```
 {{<include:snippets/qstring>}}
 ```
@@ -36,3 +38,16 @@ $3 = 22
 (gdb) p/r (*name.d).alloc
 $4 = 23
 ```
+
+Printing the string data is a bit more complicated. It is located at an offset
+from the start of the data object.
+
+```
+(gdb) x/22uh ((void*) (name.d)) + (*name.d).offset
+0x55555576ed08: 72      97      114     114     121     32      71      114
+0x55555576ed18: 101     103     115     111     110     32      87      105
+0x55555576ed28: 108     108     105     97      109     115
+```
+
+As this string is plain ASCII we can see these are valid ASCII codes: 'H' = 72,
+'A' = 97 etc.
