@@ -27,6 +27,11 @@ Why gdb by example, doesn't gdb just know how to display things in the way we wa
 * [C++ standard library](cpp-stdlib/doc.md#c++-standard-library)
   * [string](cpp-stdlib/doc.md#string)
 
+## C++ Libraries
+
+* [QT basic types](qt-basic/doc.md#qt-basic-types)
+  * [QString](qt-basic/doc.md#qstring)
+
 ## Tools used
 
 * gcc 7.4.0

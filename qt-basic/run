@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+qmake
+make
+
+ulimit -c unlimited
+gdb \
+    --command=_gdb.script \
+    ./main

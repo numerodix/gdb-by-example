@@ -1,3 +1,5 @@
+*.o
+.qmake.stash
 .vscode
 core
 main

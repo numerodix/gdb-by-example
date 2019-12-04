@@ -10,6 +10,10 @@ Why gdb by example, doesn't gdb just know how to display things in the way we wa
 
 {{<toc,levels:1-3,source:cpp-stdlib/doc.md>}}
 
+## C++ Libraries
+
+{{<toc,levels:1-3,source:qt-basic/doc.md>}}
+
 ## Tools used
 
 * gcc 7.4.0
