@@ -56,4 +56,4 @@ from the start of the data object.
 ```
 
 As this string is plain ASCII we can see these are valid ASCII codes: 'H' = 72,
-'A' = 97 etc.
+'a' = 97 etc.
