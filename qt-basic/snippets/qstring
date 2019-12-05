@@ -1,2 +1,1 @@
-QChar initial('H');
 QString name("Harry Gregson-Williams");

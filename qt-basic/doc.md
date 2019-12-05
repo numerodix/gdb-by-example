@@ -11,7 +11,6 @@
 * Underlying storage type: `QArrayData`
 
 ```
-QChar initial('H');
 QString name("Harry Gregson-Williams");
 ```
 
